@@ -1,0 +1,9 @@
+<h3>This is an English accept form</h3>
+
+<form action="{% url 'webpages:acceptform' %}?accepted={{accepted}}" method="post">
+{% csrf_token %}
+Your email:    <input type="text" name="email" placeholder="type your email..."/>
+    <input type="hidden" name="accepted" value="{{accepted}}">
+    <input type="submit" value="Submit" />    
+</form>
+

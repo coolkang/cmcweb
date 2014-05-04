@@ -1,1 +1,16 @@
-This is English.
+<h3>This is English</h3>
+
+<form action="{% url 'webpages:acceptform' %}" method="post">
+{% csrf_token %}
+    <div>
+        <input type="button" value="YES" name="yes"/><br/>
+        <a href="{% url 'webpages:acceptform' %}?accepted=yes&tk={{tk}} ">YES</a>
+    </div>
+    <div>
+        <input type="button" value="no" name="no"/>
+        <a href="{% url 'webpages:acceptform' %}?accepted=no&tk={{tk}} ">No</a>
+    </div>
+
+    <input type="submit" value="Submit" />    
+</form>
+
