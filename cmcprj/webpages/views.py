@@ -2,7 +2,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect
 from django.template import RequestContext
-from models import UserAccess, UserInfo
+from django.conf import settings
+from models import UserAccess
 
 
 # URL path dictionary for supported languages (plus country codes).
@@ -14,7 +15,7 @@ def index(request):
     Tracks user access and redirect a user to a proper web page.
     '''
     # Determine a url path based on a user's language.
-    request.session.set_expiry(1800) # Session expires in 30 min
+    request.session.set_expiry(settings.SESSION_EXPIRATION_TIME) 
     lang_code = request.LANGUAGE_CODE
     if lang_code in urlpath_dict.keys():
         request.session['url_path'] = urlpath_dict[lang_code] 
@@ -58,17 +59,12 @@ def acceptform(request):
         useraccess.accepted = accepted
         useraccess.save() 
     elif request.method == 'POST':
-        '''
-        If a user want to leave his/her email, the email will be saved in a 
-        UserInfo instance. The email will be used to follow up the user with 
-        follow-up email.
-        '''
-        accepted = request.POST['accepted']
-        email = request.POST['email']
-        userinfo = UserInfo.create(accepted, email)
-        userinfo.save()
+        accessid = request.session['accessid']
+        useraccess = UserAccess.objects.get(id=accessid)        
+        useraccess.email = request.POST['email']
+        useraccess.save()
         # Go back to the front page with a message
-        return HttpResponseRedirect('/thanks')
+        return redirect('webpages:thanks')
     else: # Other HTTP methods are not supported.
         return HttpResponseBadRequest # Throw a HTTP 400 error
     return render(request, ('%s/acceptform.html' % url_path), 
@@ -81,6 +77,7 @@ def thanks(request):
     if 'url_path' not in request.session:
         return redirect('webpages:index')
     url_path = request.session['url_path']
-    request.session.flush() # Clear session data
+    print 'expires:',request.session.get_expiry_date()
+    request.session.clear() # Clear session data
     return render(request,('%s/thanksform.html' % url_path), {})
     
