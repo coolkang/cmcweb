@@ -1,60 +1,50 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.http import HttpResponseBadRequest
+from django.shortcuts import render, redirect
 from django.template import RequestContext
 from models import UserAccess, UserInfo
 
 
+# URL path dictionary for supported languages (plus country codes).
 urlpath_dict = {'en':'en', 'ko':'ko', 'tr':'tr'}
-
-
-def get_urlpath(request):
-    '''
-    Helper function to return a proper URL path for each language code.
-    '''
-    # Check language code in two places
-    # TODO
-    # 1. lang_code in session that the system created in previous steps.
-    # 2. request.LANGUAGE_CODE. If lang_code in session does not exist.
-    
-    lang_code = request.LANGUAGE_CODE
-    
-    if lang_code in urlpath_dict.keys():
-        url_path = urlpath_dict[lang_code]
-    else:
-        # Set a default value
-        url_path = 'en'
-    return url_path    
 
 
 def index(request):
     '''
     Tracks user access and redirect a user to a proper web page.
     '''
-    # Extract user access info
-    # Determine a language code that a user uses.
-    url_path = get_urlpath(request)
-    # IP address    
-    ip_addr = request.META['REMOTE_ADDR']
-    # Create a UserAccess instance to save to db.
+    # Determine a url path based on a user's language.
+    request.session.set_expiry(1800) # Session expires in 30 min
     lang_code = request.LANGUAGE_CODE
+    if lang_code in urlpath_dict.keys():
+        request.session['url_path'] = urlpath_dict[lang_code] 
+    else: # Set a default value
+        request.session['url_path'] = 'en'
+    # IP address    
+    ip_addr = request.META['REMOTE_ADDR']    
+    # Inspect and get a language code from a user's browser
+    lang_code = request.LANGUAGE_CODE
+    # Create a UserAccess instance to save to db.
     access = UserAccess.create(ip_addr, lang_code, 'na')
     # Recording user access info into database
     access.save()
     # To track the user for the next page
-    tk = access.tk
-    print tk
+    request.session['accessid'] = access.id
     # Save access id into session for tracking
     # Redirecting a user to their language page.
-    return render(request, ('%s/front.html' % url_path), {'tk':tk})
+    return render(request, ('%s/front.html' % request.session['url_path']), {})
 
 
 def acceptform(request):
     '''
     Record a user's information who accepted and agreed with a message.
     '''
-    url_path = get_urlpath(request)
+    # First, check if the current user has come through previous pages.
+    # If not, send the user to the front page where a message is.
+    if 'url_path' not in request.session:
+        return redirect('webpages:index')
+    url_path = request.session['url_path']
     # Save a form info to db.
-    
     if request.method == 'GET':
         '''
         Save if a user accepted the message into UserAccess.
@@ -63,8 +53,8 @@ def acceptform(request):
         saved in UserInfo because of privacy (not to bind IP address and email)
         '''
         accepted = request.GET['accepted']
-        tk = request.GET['tk']
-        useraccess = UserAccess.objects.get(tk=tk)
+        accessid = request.session['accessid']
+        useraccess = UserAccess.objects.get(id=accessid)
         useraccess.accepted = accepted
         useraccess.save() 
     elif request.method == 'POST':
@@ -79,14 +69,18 @@ def acceptform(request):
         userinfo.save()
         # Go back to the front page with a message
         return HttpResponseRedirect('/thanks')
-    else:
-        pass
-    
+    else: # Other HTTP methods are not supported.
+        return HttpResponseBadRequest # Throw a HTTP 400 error
     return render(request, ('%s/acceptform.html' % url_path), 
         {'accepted':accepted})
 
 
 def thanks(request):
-    url_path = get_urlpath(request)
+    # First, check if the current user has come through previous pages.
+    # If not, send the user to the front page where a message is. 
+    if 'url_path' not in request.session:
+        return redirect('webpages:index')
+    url_path = request.session['url_path']
+    request.session.flush() # Clear session data
     return render(request,('%s/thanksform.html' % url_path), {})
     

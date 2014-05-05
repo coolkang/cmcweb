@@ -4,11 +4,11 @@
 {% csrf_token %}
     <div>
         <input type="button" value="YES" name="yes"/><br/>
-        <a href="{% url 'webpages:acceptform' %}?accepted=yes&tk={{tk}} ">YES</a>
+        <a href="{% url 'webpages:acceptform' %}?accepted=yes">YES</a>
     </div>
     <div>
         <input type="button" value="no" name="no"/>
-        <a href="{% url 'webpages:acceptform' %}?accepted=no&tk={{tk}} ">No</a>
+        <a href="{% url 'webpages:acceptform' %}?accepted=no">No</a>
     </div>
 
     <input type="submit" value="Submit" />    

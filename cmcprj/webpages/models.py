@@ -9,16 +9,10 @@ class UserAccess(models.Model):
     lang_code = models.CharField(max_length=10)
     timestamp = models.DateTimeField(auto_now=True)
     accepted = models.CharField(max_length=5) # value: yes | no | na (not available)
-    tk = models.CharField(max_length=100, unique=True)
-    
-    #def __init__(self):
-    #    super(UserAccess, self).__init__()
-    #    self.tk = str(uuid.uuid4()) # assigning unique id
-        
+            
     @classmethod
     def create(cls, ip_addr, lang_code, accepted):
-        useraccess = cls(ip_addr=ip_addr, lang_code=lang_code,
-            accepted=accepted, tk=(str(uuid.uuid4())))
+        useraccess = cls(ip_addr=ip_addr, lang_code=lang_code,accepted=accepted)
         return useraccess
 
 
