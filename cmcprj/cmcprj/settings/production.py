@@ -17,3 +17,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+ALLOWED_HOSTS = [
+    '128.199.236.238',
+]
