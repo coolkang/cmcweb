@@ -1,7 +1,7 @@
 from cmcprj.settings.base import *
 
 
-DEBUG= True
+DEBUG= False
 
 
 # Database
