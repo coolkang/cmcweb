@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if accepted == 'yes' %}
 <h3>You should grow in knowing Jesus.</h3>
 
 <div style="width:560px;margin-top:30px;margin-bottom:30px;">
@@ -17,6 +18,28 @@ deserunt mollit anim id est laborum.
 <div style="width:560px;margin-top:30px;margin-bottom:30px;">
 <b ><font style="color:#3399FF;">If you want to know Jesus more, please give us your email. We will send you more information.</font></b>   
 </div>
+
+{% else %}
+
+<h3>We can help you to make a right decision.</h3>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+deserunt mollit anim id est laborum.    
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+<b ><font style="color:#3399FF;">If you want to know more about Jesus before you making a decision, please give us your email. We will send you more information.</font></b>   
+</div>
+
+
+{% endif %}
+
 
 <form class="form-inline" action="{% url 'webpages:acceptform' %}?accepted={{accepted}}" method="post">
 {% csrf_token %}
