@@ -2,6 +2,10 @@
 
 {% block content %}
 
-<h3>Thank you! You will receive an email that tells you of Jesus more.</h3>
+    {% if has_email %}
+    <h3>Thank you! You will receive an email that tells you of Jesus more.</h3>
+    {% else %}
+    <h3>Okay! We hope to see you next time.</h3>    
+    {% endif %}
 
 {% endblock %}

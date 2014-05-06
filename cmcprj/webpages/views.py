@@ -45,30 +45,40 @@ def acceptform(request):
     if 'url_path' not in request.session:
         return redirect('webpages:index')
     url_path = request.session['url_path']
-    # Save a form info to db.
+    # GET method
     if request.method == 'GET':
         '''
         Save if a user accepted the message into UserAccess.
-        UserAccess is purely for recording the result of the message acceptance.
-        User's email is not stored in UserAccess, and it will be separately 
-        saved in UserInfo because of privacy (not to bind IP address and email)
         '''
         accepted = request.GET['accepted']
         accessid = request.session['accessid']
         useraccess = UserAccess.objects.get(id=accessid)
         useraccess.accepted = accepted
-        useraccess.save() 
+        useraccess.save()         
+        return render(request, ('%s/acceptform.html' % url_path), 
+            {'accepted':accepted, 'mssg':''})
+    # POST method
     elif request.method == 'POST':
-        accessid = request.session['accessid']
-        useraccess = UserAccess.objects.get(id=accessid)        
-        useraccess.email = request.POST['email']
-        useraccess.save()
-        # Go back to the front page with a message
-        return redirect('webpages:thanks')
-    else: # Other HTTP methods are not supported.
+        email = request.POST['email']
+        if 'yes_email' in request.POST: # If the user gave an email.
+            if email: # if email is not empty
+                accessid = request.session['accessid']
+                useraccess = UserAccess.objects.get(id=accessid)        
+                useraccess.email = email
+                useraccess.save()
+                request.session['has_email'] = True
+                return redirect('webpages:thanks')     
+            else: # if empty email, ask again
+                accepted = request.GET['accepted']
+                mssg = 'Please type your email.'
+                return render(request, ('%s/acceptform.html' % url_path), 
+                    {'accepted':accepted, 'mssg':mssg})                
+        elif 'no_email' in request.POST: # if the user didn't give an email
+            request.session['has_email'] = False
+            return redirect('webpages:thanks')
+    # Other HTTP methods are not supported.        
+    else: 
         return HttpResponseBadRequest # Throw a HTTP 400 error
-    return render(request, ('%s/acceptform.html' % url_path), 
-        {'accepted':accepted})
 
 
 def thanks(request):
@@ -77,7 +87,7 @@ def thanks(request):
     if 'url_path' not in request.session:
         return redirect('webpages:index')
     url_path = request.session['url_path']
-    print 'expires:',request.session.get_expiry_date()
+    has_email = request.session['has_email']
     request.session.clear() # Clear session data
-    return render(request,('%s/thanks.html' % url_path), {})
+    return render(request,('%s/thanks.html' % url_path),{'has_email':has_email})
     
