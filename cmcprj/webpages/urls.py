@@ -7,3 +7,6 @@ urlpatterns = patterns('',
     url(r'^thanks$', views.thanks, name='thanks'),
     url(r'^$', views.index, name='index'),
 )
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += staticfiles_urlpatterns()

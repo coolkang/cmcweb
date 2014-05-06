@@ -1,16 +1,59 @@
-<h3>This is English</h3>
+{% extends "base/basic.html" %}
 
-<form action="{% url 'webpages:acceptform' %}" method="post">
-{% csrf_token %}
-    <div>
-        <input type="button" value="YES" name="yes"/><br/>
-        <a href="{% url 'webpages:acceptform' %}?accepted=yes">YES</a>
-    </div>
-    <div>
-        <input type="button" value="no" name="no"/>
-        <a href="{% url 'webpages:acceptform' %}?accepted=no">No</a>
-    </div>
+{% block content %}
 
-    <input type="submit" value="Submit" />    
-</form>
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+<iframe width="560" height="315" src="//www.youtube.com/embed/TCSUKIhjevo" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+deserunt mollit anim id est laborum.    
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+deserunt mollit anim id est laborum.    
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+deserunt mollit anim id est laborum.    
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+deserunt mollit anim id est laborum.    
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+<b>Do you accept Jesus as your savior?</b>    
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:60px;">
+    <span style="margin-right:20px;"><a class="btn btn-success" href="{% url 'webpages:acceptform' %}?accepted=yes">Accpept</a></span>
+    <span><a class="btn btn-warning" href="{% url 'webpages:acceptform' %}?accepted=no">Not This Time</a></span>
+</div>
+
+{% endblock %}
 
