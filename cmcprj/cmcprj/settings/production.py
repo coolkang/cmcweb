@@ -21,3 +21,4 @@ DATABASES = {
 ALLOWED_HOSTS = [
     '128.199.236.238',
 ]
+
