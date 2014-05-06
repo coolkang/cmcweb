@@ -83,6 +83,7 @@ SESSION_EXPIRATION_TIME = 900 # 15 min
 
 STATICFILES_DIRS = (
         os.path.join(BASE_DIR, "STATIC"),
+        #'/var/www/hadiye.org/static/',
 )
 
 
