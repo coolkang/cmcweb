@@ -16,3 +16,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, "STATIC"),
+)

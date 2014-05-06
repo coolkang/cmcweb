@@ -81,10 +81,10 @@ STATIC_URL = '/static/'
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRATION_TIME = 900 # 15 min
 
-STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, "STATIC"),
-        #'/var/www/hadiye.org/static/',
-)
+#STATICFILES_DIRS = (
+#        os.path.join(BASE_DIR, "STATIC"),
+#        '/var/www/hadiye.org/static/',
+#)
 
 
 
