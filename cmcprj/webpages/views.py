@@ -79,5 +79,5 @@ def thanks(request):
     url_path = request.session['url_path']
     print 'expires:',request.session.get_expiry_date()
     request.session.clear() # Clear session data
-    return render(request,('%s/thanksform.html' % url_path), {})
+    return render(request,('%s/thanks.html' % url_path), {})
     

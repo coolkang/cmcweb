@@ -1,9 +1,32 @@
-<h3>This is an English accept form</h3>
+{% extends "base/basic.html" %}
 
-<form action="{% url 'webpages:acceptform' %}?accepted={{accepted}}" method="post">
+{% block content %}
+
+<h3>You should grow in knowing Jesus.</h3>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut 
+aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+deserunt mollit anim id est laborum.    
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+<b ><font style="color:#3399FF;">If you want to know Jesus more, please give us your email. We will send you more information.</font></b>   
+</div>
+
+<form class="form-inline" action="{% url 'webpages:acceptform' %}?accepted={{accepted}}" method="post">
 {% csrf_token %}
-Your email:    <input type="text" name="email" placeholder="type your email..."/>
+    <label class="control-label" style="margin-right:10px;">Your email:</label>
+    <input class="form-control" type="text" name="email" placeholder="type your email..." style="width:300px;"/>
+    <span style="margin-left:20px;">
+        <input class="btn btn-success" type="submit" value="Submit" />    
+    </span>
     <input type="hidden" name="accepted" value="{{accepted}}">
-    <input type="submit" value="Submit" />    
+
 </form>
 
+{% endblock %}
