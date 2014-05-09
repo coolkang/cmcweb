@@ -25,6 +25,3 @@ ALLOWED_HOSTS = [
 STATIC_ROOT = '/var/www/hadiye.org/static/'
 
 
-#STATICFILES_DIRS = (
-#        '/var/www/hadiye.org/static/',
-#)
