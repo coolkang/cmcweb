@@ -22,6 +22,10 @@ ALLOWED_HOSTS = [
     '128.199.236.238',
 ]
 
+STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, "STATIC"),
+)
+
 STATIC_ROOT = '/var/www/hadiye.org/static/'
 
 
