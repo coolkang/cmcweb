@@ -47,18 +47,17 @@ deserunt mollit anim id est laborum.
 
 
 {% endif %}
-
-<form class="form-inline" action="{% url 'webpages:acceptform' %}?accepted={{accepted}}" method="post">
+<form class="form-inline" style="margin-bottom:10px;" action="{% url 'webpages:acceptform' %}?accepted={{accepted}}" method="post">
 {% csrf_token %}
-    <label class="control-label" style="margin-right:10px;">Your email:</label>
-    <input class="form-control" type="text" name="email" placeholder="type your email..." style="width:300px;"/>
-    <span style="margin-left:20px;">
-        <input class="btn btn-success" type="submit" name="yes_email" value="Submit" />    
-    </span>
-    <span style="margin-left:20px;">
-        <input class="btn btn-warning" type="submit" name="no_email" value="No, Thanks" />     
-    </span>
-    <input type="hidden" name="accepted" value="{{accepted}}">
+<div class="row">
+    <div class="col-md-12"> 
+        <label class="control-label" style="margin-right:5px;margin-top:5px;">Your email:</label>
+        <input class="form-control" style="width:250px;margin-top:5px;margin-right:10px;" type="text" name="email" placeholder="type your email..." />
+        <input class="btn btn-success"  style="margin-right:10px;margin-top:5px;" type="submit" name="yes_email" value="Submit" />    
+        <input class="btn btn-warning" style="margin-top:5px;" type="submit" name="no_email" value="No, Thanks" />     
+        <input type="hidden" name="accepted" value="{{accepted}}">
+    </div>
+</div>
 </form>
 
 {% endblock %}

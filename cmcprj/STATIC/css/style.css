@@ -1,10 +1,10 @@
-@media screen and (max-width:560px)
-{
-    body 
-    {    
-            font-size: 15px;
-            font-family: 'avenir next','avenir','lucida grande',tahoma,verdana,arial,sans-serif;
-            width: 100%;
-            margin: 0 auto;
-    }
+
+body 
+{    
+        font-size: 15px;
+        font-family: 'avenir next','avenir','lucida grande',tahoma,verdana,arial,sans-serif;
+        width: 580px;
+        margin: 0 auto;
+        padding-left:10px;
 }
+
