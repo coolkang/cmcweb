@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect
@@ -6,8 +7,11 @@ from django.conf import settings
 from models import UserAccess
 
 
+
 # URL path dictionary for supported languages (plus country codes).
 urlpath_dict = {'en':'en', 'ko':'ko', 'tr':'tr'}
+lang_choices = [('en',u'English'),('tr',u'Türkçe'),('ko',u'한국어')]
+
 
 
 def index(request):
@@ -15,8 +19,14 @@ def index(request):
     Tracks user access and redirect a user to a proper web page.
     '''
     # Determine a url path based on a user's language.
+    # First, check if a user selected a specific language code
+    if 'langcode' in request.GET: 
+        lang_code = request.GET['langcode']
+    # If no user lang choice, detect a browser language.
+    else: 
+        lang_code = request.LANGUAGE_CODE
+        
     request.session.set_expiry(settings.SESSION_EXPIRATION_TIME) 
-    lang_code = request.LANGUAGE_CODE
     if lang_code in urlpath_dict.keys():
         request.session['url_path'] = urlpath_dict[lang_code] 
     else: # Set a default value
@@ -31,9 +41,10 @@ def index(request):
     access.save()
     # To track the user for the next page
     request.session['accessid'] = access.id
-    # Save access id into session for tracking
-    # Redirecting a user to their language page.
-    return render(request, ('%s/front.html' % request.session['url_path']), {})
+    # Get a language choice obj list for user's language choice buttons
+    
+    return render(request, ('%s/front.html' % request.session['url_path']), 
+        {'lang_choices':lang_choices, 'curr_lang':request.session['url_path']})
 
 
 def acceptform(request):

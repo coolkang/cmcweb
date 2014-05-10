@@ -3,7 +3,6 @@ import uuid
 
 
 
-
 class UserAccess(models.Model):
     ip_addr = models.CharField(max_length=30)
     lang_code = models.CharField(max_length=10)
@@ -17,4 +16,3 @@ class UserAccess(models.Model):
         useraccess = cls(ip_addr=ip_addr, lang_code=lang_code, 
             accepted=accepted)
         return useraccess
-

@@ -14,7 +14,18 @@
 </head>
 <body>
     
-    {% block content %}{% endblock %}
+    <div style="padding-top:5px;padding-right:10px;text-align:right;">
+        {% for code, label in lang_choices %}
+            {% if code != curr_lang %}
+            <span style="margin-left:5px;">
+                <a class="btn btn-default btn-xs" href="{% url 'webpages:index' %}?langcode={{code}}">{{label}}</a>
+            </span>
+            {% endif %}
+        {% endfor %}
+    </div>
+    
+    {% block content %}
+    {% endblock %}
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
