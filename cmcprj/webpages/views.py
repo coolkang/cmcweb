@@ -4,7 +4,12 @@ from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect
 from django.template import RequestContext
 from django.conf import settings
+from django.core.mail import send_mail
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+
 from models import UserAccess
+
 
 
 
@@ -73,6 +78,15 @@ def acceptform(request):
         email = request.POST['email']
         if 'yes_email' in request.POST: # If the user gave an email.
             if email: # if email is not empty
+                # Validate email
+                try:
+                    validate_email(email)
+                except ValidationError:
+                    accepted = request.GET['accepted']
+                    mssg = 'Invalid email. Please type a valid email.'
+                    return render(request, ('%s/acceptform.html' % url_path), 
+                        {'accepted':accepted, 'mssg':mssg})   
+                # once validated, process submitted information.
                 accessid = request.session['accessid']
                 useraccess = UserAccess.objects.get(id=accessid)        
                 useraccess.email = email
@@ -102,3 +116,6 @@ def thanks(request):
     request.session.clear() # Clear session data
     return render(request,('%s/thanks.html' % url_path),{'has_email':has_email})
     
+
+
+
