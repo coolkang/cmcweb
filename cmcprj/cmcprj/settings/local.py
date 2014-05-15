@@ -3,6 +3,11 @@ from cmcprj.settings.base import *
 
 DEBUG= True
 
+TEMPLATE_DEBUG = True
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '+8tikx+u1!5pb=w!jg6&qd=t^x0&t4_-&v0vx82gq%2t7b8-bo'
+
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
@@ -24,3 +29,6 @@ STATICFILES_DIRS = (
 
 # Used by Celery app.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cmcprj.settings.local')
+
+# Email setup for local; it sends emails to standard output, no real email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

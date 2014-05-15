@@ -11,7 +11,7 @@ def sendmail(self):
     '''
     It sends a follow up emails to visitors who left their contact info. 
     '''
-    send_mail('cmcweb email test', 'Jesus is your savior', 'from@example.com',
+    send_mail('cmcweb email test','Jesus is your savior','from@example.com',
         ['visiontier@gmail.com'], fail_silently=True)
     
     
