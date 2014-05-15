@@ -20,3 +20,7 @@ DATABASES = {
 STATICFILES_DIRS = (
         os.path.join(BASE_DIR, "STATIC"),
 )
+
+
+# Used by Celery app.
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cmcprj.settings.local')

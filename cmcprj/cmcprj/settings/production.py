@@ -1,3 +1,4 @@
+import os
 from cmcprj.settings.base import *
 
 
@@ -27,5 +28,12 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = '/var/www/hadiye.org/static/'
+
+# Used by Celery app for a message queue.
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cmcprj.settings.production')
+
+# Mail Setup.
+
+
 
 
