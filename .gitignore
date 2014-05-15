@@ -52,3 +52,5 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+# Django settings for production
+cmcweb/cmcprj/cmcprj/settings/production.py
