@@ -53,4 +53,4 @@ coverage.xml
 docs/_build/
 
 # Django settings for production
-cmcweb/cmcprj/cmcprj/settings/production.py
+cmcprj/cmcprj/settings/production.py
