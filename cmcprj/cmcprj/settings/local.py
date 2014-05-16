@@ -32,3 +32,9 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cmcprj.settings.local')
 
 # Email setup for local; it sends emails to standard output, no real email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mandrillapp.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '' #''hadiye.info@gmail.com'
+EMAIL_HOST_PASSWORD = '' # '21gdQSUMhMPb4R_fF0BNyw'
+EMAIL_USE_TLS = False

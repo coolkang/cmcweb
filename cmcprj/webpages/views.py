@@ -7,8 +7,8 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
-
 from models import UserAccess
+from cmcprj.celeryapp import sendmail
 
 
 
@@ -92,6 +92,9 @@ def acceptform(request):
                 useraccess.email = email
                 useraccess.save()
                 request.session['has_email'] = True
+                # Put this email into a message queue (Celery)
+                sendmail.delay()
+                
                 return redirect('webpages:thanks')     
             else: # if empty email, ask again
                 accepted = request.GET['accepted']
