@@ -2,8 +2,10 @@ from __future__ import absolute_import
 from celery import Celery
 #from django.conf import settings
 from django.core.mail import send_mail
-#import os
+import os
 #os.environ['DJANGO_SETTINGS_MODULE'] = 'cmcprj.settings.local'
+
+print 'DJANGO_SETTINGS_MODULE', os.environ['DJANGO_SETTINGS_MODULE']
 
 app = Celery('cmcprj', backend='amqp', broker='amqp://')
 
