@@ -8,14 +8,15 @@ from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from models import UserAccess
-#from cmcprj.celeryapp import sendmail
-
 
 
 
 # URL path dictionary for supported languages (plus country codes).
-urlpath_dict = {'en':'en', 'ko':'ko', 'tr':'tr'}
-lang_choices = [('en',u'English'),('tr',u'Türkçe'),('ko',u'한국어')]
+urlpath_dict = {'en':'en', 'ko':'ko', 'tr':'tr', 'ar':'ar', 'ar-eg':'ar', 
+    'zh':'zh'}
+lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),
+    ('ko',u'한국어')]
+
 
 def sendmail():
     '''
