@@ -3,7 +3,7 @@ from celery import Celery
 #from django.conf import settings
 from django.core.mail import send_mail
 import os
-os.environ['DJANGO_SETTINGS_MODULE'] = 'cmcprj.settings.production'
+#os.environ['DJANGO_SETTINGS_MODULE'] = 'cmcprj.settings.production'
 
 print 'DJANGO_SETTINGS_MODULE', os.environ['DJANGO_SETTINGS_MODULE']
 

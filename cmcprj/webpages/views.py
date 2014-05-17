@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from models import UserAccess
-from cmcprj.celeryapp import sendmail
+#from cmcprj.celeryapp import sendmail
 
 
 
@@ -17,6 +17,12 @@ from cmcprj.celeryapp import sendmail
 urlpath_dict = {'en':'en', 'ko':'ko', 'tr':'tr'}
 lang_choices = [('en',u'English'),('tr',u'Türkçe'),('ko',u'한국어')]
 
+def sendmail():
+    '''
+    It sends a follow up emails to visitors who left their contact info. 
+    '''
+    send_mail('cmcweb email test','Jesus is your savior','hadiye.info@gmail.com',
+        ['visiontier@gmail.com'], fail_silently=True)
 
 
 def index(request):
@@ -92,8 +98,10 @@ def acceptform(request):
                 useraccess.email = email
                 useraccess.save()
                 request.session['has_email'] = True
+                # send email
+                sendmail()
                 # Put this email into a message queue (Celery)
-                sendmail.delay()
+                #sendmail.delay()
                 
                 return redirect('webpages:thanks')     
             else: # if empty email, ask again
@@ -119,6 +127,7 @@ def thanks(request):
     request.session.clear() # Clear session data
     return render(request,('%s/thanks.html' % url_path),{'has_email':has_email})
     
+
 
 
 
