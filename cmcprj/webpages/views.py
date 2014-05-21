@@ -7,7 +7,9 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.utils.translation import activate
 from models import UserAccess
+
 
 
 
@@ -36,8 +38,7 @@ def index(request):
         lang_code = request.GET['langcode']
     # If no user lang choice, detect a browser language.
     else: 
-        lang_code = request.LANGUAGE_CODE
-        
+        lang_code = request.LANGUAGE_CODE    
     request.session.set_expiry(settings.SESSION_EXPIRATION_TIME) 
     if lang_code in urlpath_dict.keys():
         request.session['url_path'] = urlpath_dict[lang_code] 
@@ -128,6 +129,10 @@ def thanks(request):
     request.session.clear() # Clear session data
     return render(request,('%s/thanks.html' % url_path),{'has_email':has_email})
     
+
+
+
+
 
 
 
