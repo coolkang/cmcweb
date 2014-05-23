@@ -73,7 +73,7 @@ STATIC_URL = '/static/'
 
 # Additional Settings for this project
 SESSION_SAVE_EVERY_REQUEST = True
-SESSION_EXPIRATION_TIME = 900 # 15 min
+SESSION_EXPIRATION_TIME = 1800 # 30 min
 
 # GeoIP Settings
 GEOIP_PATH = os.path.join(BASE_DIR, 'GEODB')
