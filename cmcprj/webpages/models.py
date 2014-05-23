@@ -2,9 +2,8 @@ from django.db import models
 import uuid
 
 
-
 class UserAccess(models.Model):
-    ip_addr = models.CharField(max_length=30)
+    ip_addr = models.GenericIPAddressField(max_length=30)
     lang_code = models.CharField(max_length=10)
     timestamp = models.DateTimeField(auto_now=True)
     # accepted value: yes | no | na (not available)
@@ -16,3 +15,19 @@ class UserAccess(models.Model):
         useraccess = cls(ip_addr=ip_addr, lang_code=lang_code, 
             accepted=accepted)
         return useraccess
+
+class AccessLocation(models.Model):
+    access_id = models.OneToOneField(UserAccess)
+    country = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    lat = models.FloatField()
+    lon = models.FloatField()
+    timestamp = models.DateTimeField(auto_now=True)
+    
+    @classmethod
+    def create(cls, access_id, country, city, lat, lon):
+        accesslocation = cls(access_id=access_id,country=country,city=city,
+            lat=lat,lon=lon)
+        return accesslocation
+
+        

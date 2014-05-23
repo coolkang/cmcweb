@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import HttpResponseBadRequest
 from django.shortcuts import render, redirect
@@ -8,9 +9,20 @@ from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.utils.translation import activate
-from models import UserAccess
+#from django.conf.settings import georeader
+from cmcprj.settings.base import georeader,BASE_DIR
+from django.conf import settings
+from models import UserAccess, AccessLocation
+#from django.contrib.gis.geoip import GeoIP
+import geoip2.database
+from geoip2.errors import GeoIP2Error,AddressNotFoundError
 
 
+# set up logging
+import logging
+logging.basicConfig(filename=os.path.join(BASE_DIR,'LOGS/django.log'),
+    level=settings.LOG_LEVEL)
+logger = logging.getLogger(__name__)
 
 
 # URL path dictionary for supported languages (plus country codes).
@@ -52,6 +64,20 @@ def index(request):
     access = UserAccess.create(ip_addr, lang_code, 'na')
     # Recording user access info into database
     access.save()
+    # Save geolocation info for the access.
+    
+    # Create access location information to save
+    try:
+        geoinfo = georeader.city(access.ip_addr)
+        country = geoinfo.country.iso_code 
+        city = geoinfo.city.name
+        lat = geoinfo.location.latitude
+        lon = geoinfo.location.longitude
+        location = AccessLocation.create(access_id=access, country=country, 
+            city=city, lat=lat, lon=lon)
+        location.save()
+    except GeoIP2Error as e:
+        logger.error(e)
     # To track the user for the next page
     request.session['accessid'] = access.id
     # Get a language choice obj list for user's language choice buttons
@@ -102,8 +128,6 @@ def acceptform(request):
                 request.session['has_email'] = True
                 # send email
                 sendmail()
-                # Put this email into a message queue (Celery)
-                #sendmail.delay()
                 
                 return redirect('webpages:thanks')     
             else: # if empty email, ask again

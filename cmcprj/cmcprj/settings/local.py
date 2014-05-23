@@ -38,3 +38,13 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = '' 
 EMAIL_USE_TLS = False
+
+
+# set up logging
+import logging
+logging.basicConfig(filename=os.path.join(BASE_DIR,'LOGS/django.log'),
+    level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Logging setting
+LOG_LEVEL = 20 # logging.INFO

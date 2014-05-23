@@ -75,10 +75,13 @@ STATIC_URL = '/static/'
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_EXPIRATION_TIME = 900 # 15 min
 
-#STATICFILES_DIRS = (
-#        os.path.join(BASE_DIR, "STATIC"),
-#        '/var/www/hadiye.org/static/',
-#)
+# GeoIP Settings
+GEOIP_PATH = os.path.join(BASE_DIR, 'GEODB')
+
+import geoip2.database
+georeader = geoip2.database.Reader(os.path.join(GEOIP_PATH,'GeoLite2-City.mmdb'))
+
+
 
 
 
