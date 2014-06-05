@@ -1,0 +1,74 @@
+
+  body
+  {
+    margin: 0;
+  }
+  .wrapper
+  {
+    width: 1280px;
+    height:100%;
+    text-align:center;
+    margin:0 auto;
+  }
+  
+  .color_overlay
+  {
+    position:absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    
+    background-color: #7e9da2;
+    opacity:0.7;
+  }
+  
+  .frame_overlay
+  {
+    position:absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -640px;
+    width: 1280px;
+    z-index: 80;
+  }
+  
+  .content_overlay
+  {
+    position:absolute;
+    z-index: 999;
+    top: 0px;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -640px;
+    width: 1280px;
+    
+    text-align:center;
+  }
+  
+  video {
+    width: 100%    !important;
+    height: auto   !important;
+  }
+  
+@media screen and (max-width:1280)
+{
+    .wrapper
+    {
+      width: 100%;
+    }
+    .frame_overlay
+    {
+      left:0;
+      margin-left:0;
+      width:100%;
+    }
+  
+    .content_overlay
+    {
+      left: 0;
+      margin-left: 0;
+      width:100%;
+    }
+}  
+  

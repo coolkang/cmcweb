@@ -27,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 # URL path dictionary for supported languages (plus country codes).
 urlpath_dict = {'en':'en', 'ko':'ko', 'tr':'tr', 'ar':'ar', 'ar-eg':'ar', 
-    'zh':'zh'}
+    'zh':'zh', 'zh-cn':'zh'}
 lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),
     ('ko',u'한국어')]
 
@@ -46,6 +46,7 @@ def index(request):
     '''
     # Determine a url path based on a user's language.
     # First, check if a user selected a specific language code
+    
     if 'langcode' in request.GET: 
         lang_code = request.GET['langcode']
     # If no user lang choice, detect a browser language.
@@ -56,6 +57,11 @@ def index(request):
         request.session['url_path'] = urlpath_dict[lang_code] 
     else: # Set a default value
         request.session['url_path'] = 'en'
+        
+    if 'url_path' not in request.session:
+        return redirect('webpages:index')
+    url_path = request.session['url_path']        
+        
     # IP address    
     ip_addr = request.META['REMOTE_ADDR']    
     # Inspect and get a language code from a user's browser
@@ -84,6 +90,20 @@ def index(request):
     
     return render(request, ('%s/front.html' % request.session['url_path']), 
         {'lang_choices':lang_choices, 'curr_lang':request.session['url_path']})
+
+
+
+def message(request):
+    # Determine a url path based on a user's language.
+    # First, check if a user selected a specific language code
+    if 'url_path' not in request.session:
+        return redirect('webpages:index')
+    url_path = request.session['url_path']
+    
+    
+    return render(request, ('%s/message.html' % request.session['url_path']), 
+        {'lang_choices':lang_choices, 'curr_lang':request.session['url_path']})    
+
 
 
 def acceptform(request):
@@ -141,6 +161,8 @@ def acceptform(request):
     # Other HTTP methods are not supported.        
     else: 
         return HttpResponseBadRequest # Throw a HTTP 400 error
+
+
 
 
 def thanks(request):
