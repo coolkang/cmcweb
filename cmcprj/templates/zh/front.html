@@ -4,12 +4,18 @@
 {% block content %}
   <div class="wrapper">
     <div class="content_overlay">
-      <img style="width:100%" src="{% static 'img/Godislove.png' %}"/>
+      <img style="width:100%;" src="{% static 'img/Godislove.png' %}"/>
+      
+      <a href="message">
+      <span style="color:#fff; font-size:2.1em">Open &gt;</span>
+      </a>
     </div>
     <div class="frame_overlay">
       <img style="width:100%" src="{% static 'img/background_2.png' %}"/>
     </div>
-    <video src="http://vimeo.com/97446249" autoplay loop preload></video>
+    
+    <video src="{% static 'video/syber_10_720-0605-con.mp4' %}" autoplay loop preload></video>
+    
     
   </div>
   

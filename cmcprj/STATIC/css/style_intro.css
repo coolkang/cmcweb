@@ -1,8 +1,13 @@
-
   body
   {
     margin: 0;
   }
+  
+  a, a:hover, a:link, a:visited
+  {
+    text-decoration: none !important;
+  }
+  
   .wrapper
   {
     width: 1280px;

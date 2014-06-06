@@ -1,14 +1,35 @@
-
+/* global settings */
 body 
 {    
         font-size: 15px;
         font-family: 'avenir next','avenir','lucida grande',tahoma,verdana,arial,sans-serif;
         width: 960px;
         margin: 0 auto;
-        padding-left:10px;
+        
 
 	
 }
+
+.top_bar
+{
+  padding-top:22px;
+  padding-bottom:7px;
+  padding-right:10px;
+  padding-left:10px;
+  text-align:right;
+  
+  background: #fff;
+  
+  height: 50px;
+}
+
+h3
+{
+  margin-top: 0px;
+  padding-top: 20px;
+}
+
+/* background settings */
 
 .bg_pattern_overlay
 {
@@ -18,7 +39,8 @@ body
 	margin-left:-640px;
 	
 	width:1280px;
-	height:5000px;
+	height:1300px;
+	
 
 	background-image: url("../img/bgpattern.png");
 	z-index: -1;
@@ -31,7 +53,8 @@ body
 	left:50%;
 
 	width:640px;
-	height:5000px;
+	height:1300px;
+  
 
 	/* IE10 Consumer Preview */ 
 	background-image: -ms-linear-gradient(left, #00A3EF 0%, #FFFFFF 100%);
@@ -62,8 +85,8 @@ body
 	margin-left: -640px;	
 
 	width:640px;
-	height:5000px;
-
+	height:1300px;
+	
 	/* IE10 Consumer Preview */ 
 	background-image: -ms-linear-gradient(left, #FFFFFF 0%, #00A3EF 100%);
 
@@ -86,33 +109,12 @@ body
 	z-index:-2;
 }
 
-.bg_overlay
-{
-	
-	
-	
-	/*	
-	background-color: #7e9da2;
-	*/	
-	
-
-	
-
-	
-
-
-	
-
-
-
-
-	
-}
 
 .wrapper
 {
 	width: 960px;
-	height: 5000px;
+	height: 1250px;
+
 	background-color: #ffffff;
 }
 
@@ -120,4 +122,6 @@ body
 {
 	width:580px;
 	margin:0 auto;
+	
+	padding-bottom: 100px;
 }
