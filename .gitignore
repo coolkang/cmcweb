@@ -54,3 +54,5 @@ docs/_build/
 
 # Django settings for production
 cmcprj/cmcprj/settings/production.py
+
+*.sqlite
