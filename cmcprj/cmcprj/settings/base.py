@@ -81,6 +81,12 @@ GEOIP_PATH = os.path.join(BASE_DIR, 'GEODB')
 import geoip2.database
 georeader = geoip2.database.Reader(os.path.join(GEOIP_PATH,'GeoLite2-City.mmdb'))
 
+# properties for each language
+CONFIGS_DIR = os.path.join(BASE_DIR, 'CONFIGS')
+
+# website email
+INFO_EMAIL = 'hadiye.info@gmail.com'
+
 
 
 

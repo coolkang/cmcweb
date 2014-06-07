@@ -9,13 +9,12 @@ from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.utils.translation import activate
-#from django.conf.settings import georeader
 from cmcprj.settings.base import georeader,BASE_DIR
 from django.conf import settings
 from models import UserAccess, AccessLocation
-#from django.contrib.gis.geoip import GeoIP
 import geoip2.database
 from geoip2.errors import GeoIP2Error,AddressNotFoundError
+import ConfigParser
 
 
 # set up logging
@@ -32,12 +31,21 @@ lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'ع
     ('ko',u'한국어')]
 
 
-def sendmail():
+def sendmail(lang, to_mail):
     '''
     It sends a follow up emails to visitors who left their contact info. 
     '''
-    send_mail('cmcweb email test','Jesus is your savior','hadiye.info@gmail.com',
-        ['visiontier@gmail.com'], fail_silently=True)
+    
+    config = ConfigParser.ConfigParser()
+    config_file = 'webpage_%s.cfg' % lang
+    path = os.path.join(settings.CONFIGS_DIR, config_file)
+    config.read(path)
+    subject = config.get('Email', 'subject')
+    message = config.get('Email', 'message')
+    from_mail = settings.INFO_EMAIL
+    recipient_list = [to_mail]
+    
+    send_mail(subject, message, from_mail, recipient_list, fail_silently=True)
 
 
 def index(request):
@@ -100,7 +108,6 @@ def message(request):
         return redirect('webpages:index')
     url_path = request.session['url_path']
     
-    
     return render(request, ('%s/message.html' % request.session['url_path']), 
         {'lang_choices':lang_choices, 'curr_lang':request.session['url_path']})    
 
@@ -147,7 +154,7 @@ def acceptform(request):
                 useraccess.save()
                 request.session['has_email'] = True
                 # send email
-                sendmail()
+                sendmail(url_path, email)
                 
                 return redirect('webpages:thanks')     
             else: # if empty email, ask again
