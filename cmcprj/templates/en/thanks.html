@@ -1,11 +1,42 @@
 {% extends "base/basic.html" %}
-
+{% load staticfiles %}
 {% block content %}
 
-    {% if has_email %}
-    <h3>Thank you! You will receive an email that tells you of Jesus more.</h3>
-    {% else %}
-    <h3>Okay! We hope to see you next time.</h3>    
-    {% endif %}
 
+<div class="bg_right_overlay"></div>
+<div class="bg_left_overlay"></div>
+<div class="bg_pattern_overlay"></div>
+
+<div class="wrapper">
+
+	
+    {% if has_email %}
+	<img class="promo" src="{% static 'img/promo_3_en.png' %}"/>
+	
+	<div class="content">
+	
+		<div style="padding-top:30px">
+			<b>Hadiye English</b>
+		</div>
+		
+		<h3>Thank you! You will receive an email that tells you of Jesus more.</h3>
+	
+	</div>
+	
+	
+    {% else %}
+	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+	
+	<div class="content">
+	
+		<div style="padding-top:30px">
+			<b>Hadiye English</b>
+		</div>
+		
+		<h3>Okay! We hope to see you next time.</h3>
+	</div>
+        
+    {% endif %}
+	
+</div>
 {% endblock %}

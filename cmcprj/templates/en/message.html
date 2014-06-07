@@ -1,0 +1,49 @@
+﻿{% extends "base/basic.html" %}
+
+{% block content %}
+
+<div class="bg_right_overlay"></div>
+<div class="bg_left_overlay"></div>
+<div class="bg_pattern_overlay"></div>
+
+<div class="wrapper">
+
+<div class="video">
+<iframe src="http://player.vimeo.com/video/95954112?autoplay=1" width="960" height="480" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+
+
+<div class="content">
+
+<div style="width:560px;margin-top:60px;margin-bottom:30px;">
+Ever since Adam and Eve disobeyed God, animal sacrifice had been used to cover mankind’s sins. When Abraham was about to sacrifice his son, God provided an animal to take his place. When Pharaoh would not allow Moses to leave, God killed every firstborn son unless a lamb’s blood was on the doorpost. God told people to sacrifice an animal for their sins, and David and the prophets wondered “can the blood of animals really cover the sins of a man? Or are they signs and symbols pointing to the future?” David prophesied of a Coming One, a Messiah, a descendant of King David who would rule and reign in power, yet be a humble man. 
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Born of a virgin, Jesus preached love and humility. He offended religious hypocrites who cared about rituals more than loving God, but he was loved by the poor, the repentant, and the sinner. He healed the sick, and even raised dead men back to life. Jesus called God his “Father,” and showed mankind that “the All Powerful” loves you like a father. He was the innocent one in exchange for the guilty, to free mankind from their slavery to sin. God sacrificed Jesus to fulfill what was written by the prophets that he would become the Lamb of God who takes away the sins of the world.
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+But he didn’t stop there. Three days later God raised Jesus from the dead as a promise to those who believe in him, that they too will rise again to eternal life. After this, Jesus promised his disciples that he would return again as Judge and King! The Messiah is God’s gift to mankind that they would not die in their sins and be separated from God, but by receiving Jesus’ sacrifice they could be restored back into a perfect relationship with Him—what Adam had lost. But like any gift, it’s not yours until you take it.
+</div>
+
+<div style="width:560px;margin-top:35px;margin-bottom:30px;text-align:center">
+<b>Do you accept Jesus as your savior?</b>    
+</div>
+
+<div style="width:560px;margin-top:10px;margin-bottom:25px;text-align:center">
+    <span style="margin-right:20px;">
+        <a class="btn btn-primary" href="{% url 'webpages:acceptform' %}?accepted=yes">Accpept</a>
+    </span>
+    <span>
+        <a class="btn btn-warning" href="{% url 'webpages:acceptform' %}?accepted=no">Not This Time</a>
+    </span>
+</div>
+
+</div><!--/.content-->
+</div><!--/.wrapper-->
+{% endblock %}
+

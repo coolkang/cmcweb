@@ -21,7 +21,7 @@
         {% for code, label in lang_choices %}
             {% if code != curr_lang %}
             <span style="margin-left:5px;">
-                <a class="btn btn-default btn-xs" href="{% url 'webpages:index' %}?langcode={{code}}">{{label}}</a>
+                <a href="{% url 'webpages:index' %}?langcode={{code}}">{{label}}</a>
             </span>
             {% endif %}
         {% endfor %}
@@ -32,6 +32,36 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	<script>
+
+	$(document).ready(function(){
+	
+		var wrapper_height = $(".content").height() + $(".video").height() + 160; // add margin
+		var page_height = wrapper_height + $(".top_bar").height() + 29; // add padding
+		
+		if(wrapper_height < 760)
+		{
+			wrapper_height = 760;
+		}
+		
+		if(page_height < $(window).height())
+		{
+			page_height = $(window).height();
+		}
+		
+		
+		
+		$(".wrapper").height(wrapper_height);
+		$("body").height(page_height);
+		$(".bg_left_overlay").height(page_height);
+		$(".bg_right_overlay").height(page_height);
+		$(".bg_pattern_overlay").height(page_height);
+	});
+	</script>
+	
+	
+	
     <!-- bootstraps javascript -->    
     <script src="{% static 'bs/js/bootstrap.min.js' %}"></script>
 </body>

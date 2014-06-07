@@ -15,8 +15,19 @@
     <script src="{% static 'jquery/jquery-1.11.1.min.js' %}"></script>
     -->
 </head>
-<body style="margin: 0px auto;text-align:center">
+<body>
     
+	<div class="top_bar">
+        {% for code, label in lang_choices %}
+            {% if code != curr_lang %}
+            <span style="margin-left:5px;">
+                <a href="{% url 'webpages:index' %}?langcode={{code}}">{{label}}</a>
+            </span>
+            {% endif %}
+        {% endfor %}
+    </div>
+	
+	
     {% block content %}
     
     {% endblock %}

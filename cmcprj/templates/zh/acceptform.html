@@ -8,11 +8,11 @@
 <div class="bg_pattern_overlay"></div>
 
 <div class="wrapper">
-<img class="promo" src="{% static 'img/promo_img.png' %}"/>
+
+{% if accepted == 'yes' %}
+<img class="promo" src="{% static 'img/promo_zh.png' %}"/>
 
 <div class="content">
-{% if accepted == 'yes' %}
-
 
 <h3>You should grow in knowing Jesus.</h3>
 
@@ -23,9 +23,11 @@
 <div style="width:560px;margin-top:30px;margin-bottom:30px;">
 <b ><font style="color:#3399FF;">If you want to know Jesus more, please give us your email. We will send you more information.</font></b>   
 </div>
-</div class="content">
-{% else %}
 
+{% else %}
+<img class="promo" src="{% static 'img/promo_2_zh.png' %}"/>
+
+<div class="content">
 <h3>We can help you to make a right decision.</h3>
 
 <div style="width:560px;margin-top:30px;margin-bottom:30px;">

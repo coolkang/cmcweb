@@ -1,0 +1,49 @@
+﻿{% extends "base/basic.html" %}
+
+{% block content %}
+
+<div class="bg_right_overlay"></div>
+<div class="bg_left_overlay"></div>
+<div class="bg_pattern_overlay"></div>
+
+<div class="wrapper">
+
+<div class="video">
+<iframe src="http://player.vimeo.com/video/95954547?autoplay=1" width="960" height="480" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+
+
+<div class="content">
+
+<div style="width:560px;margin-top:60px;margin-bottom:30px;text-align:right;">
+.هذه قصة عن  "الأنبياء". أظهر الله نفسه لنا من خلال لهم. ما الوحى؟ نريد الآن أن نعرف عن الوحى معًامن خلال قصته 
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;text-align:right;">
+بدأت القصة مع سيدنا أدم عليه السلام وحواء اللذين استمعا إلي صوت الشيطان بدلا ً من صوت الله سبحانه وتعالي ولم يطيعاه ولذلك انقطعت العلاقة الوثيقة بين الله سبحانه وتعالي والانسان. هما أول من اختبرا الخطيئة؛ والموت هو من نتائج الخطيئة. أجرة الخطيئة هي موت وهي تفصلنا عن الله سبحانه وتعالى ويجب أن يُدفع ثمنها بحياة. تمت التضحية بالحيوان لتغطية ذنب الخاطئ .... وتساءل الناس هل حقاً دماء الحيوان تستطيع أن تغفر خطايا الناس؟! تنبأ النبي داود عليه السلام بمجيء التضحية العظمى، الكامل، الطاهر، البرئ، الذي سيتألم ويموت، والذي بلا خطيئة؛ سيدنا عيسي عليه السلام. شُهد له أنه المُنتظر الذي وعدت به الكتب السماوية؛
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;text-align:right;">
+..المسيح عليه السلام. بشر سيدنا عيسي عليه السلام بالمحبة والحق، السلام والتواضع. عيسي عليه السلام كان المسيح الذي اختير ليكون الذبيحة العظمى، البرئ بدلًا المذنب، القدوس الأوحد بدل من الانسان الخاطئ. ضحي الله سبحانه وتعالي بسيدنا عيسي حباً للبشرية وليتم ما كُتب بالأنبياء أنه سيصبح حمل الله سبحانه وتعالى الذي يرفع خطية العالم. مات وصُلب سيدنا عيسي ليدفع ثمن خطيئة الانسان وليحرره من عبودية الخطيئة، لكي يستعيد ما خسره آدم؛ العلاقة الوثيقة مع الله سبحانه وتعالى، لكَ ولكِ ولي! ايضاً أقامه الله في اليوم الثالث من بين الأموات، وبقيامته اعطي الذين آمنوا به حياة الخلود كما وعدهم. سيعود المسيح عيسي عليه السلام مجدداً ولكن هذه المرة كقاضياً وملكاً. المسيح عليه السلام هو هبة الله سبحانه وتعالى للانسان. وفقط بقبول تضحية عيسي عليه السلام ستتمكن من أن تعيِد هذه العلاقة الوثيقة بالله سبحانه وتعالى. ولكنها كمِثل أي هدية ليست لك إن لم تأخذها وتقبلها
+</div>
+
+<div style="width:560px;margin-top:35px;margin-bottom:30px;text-align:center">
+<b>Do you accept Jesus as your savior?</b>    
+</div>
+
+<div style="width:560px;margin-top:10px;margin-bottom:25px;text-align:center">
+    <span style="margin-right:20px;">
+        <a class="btn btn-primary" href="{% url 'webpages:acceptform' %}?accepted=yes">Accpept</a>
+    </span>
+    <span>
+        <a class="btn btn-warning" href="{% url 'webpages:acceptform' %}?accepted=no">Not This Time</a>
+    </span>
+</div>
+
+</div><!--/.content-->
+</div><!--/.wrapper-->
+{% endblock %}
+

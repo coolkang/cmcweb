@@ -1,0 +1,54 @@
+﻿{% extends "base/basic.html" %}
+
+{% block content %}
+
+<div class="bg_right_overlay"></div>
+<div class="bg_left_overlay"></div>
+<div class="bg_pattern_overlay"></div>
+
+<div class="wrapper">
+
+<div class="video">
+<iframe src="http://player.vimeo.com/video/95954111?autoplay=1" width="960" height="480" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
+
+
+
+<div class="content">
+
+<div style="width:560px;margin-top:60px;margin-bottom:30px;">
+Bu hikaye Tanrı’nın yerine Şeytan’ın sesini dinlemiş olan Adem ve Havva ile başlar. Ve insan oğlunun Tanrı ile olan mükemmel ilişkisi zarar gördü. Onlar günahı ve sonucunda ölümü deneyimleyen ilklerdi. Tanrı onları hayvan derisiyle gidiyerek kapladı. Onların utançlarını örtmek için Tanrı kendisi ilk hayvanı kurban etti.
+Mısır’dan çıkarken Tanrı Musa aracılığıyla insanlara bir kuzu kurban etemeleri ve kanının evin kapı dikmesine sürülmesini buyurdu. Eğer melek kanı görmüşse içerdeki çocuklarını kurbanla itfa edilmiş olduklarını anlamış olacaktır. Bu kurban kanı olmayan evlerdeki bütün ilk doğan çocuklar o gece hepsi öldüler. Daha sonra Musa insanlara günahlarını örtmekleri için Tanrı’nın kurallarını belilemiş olduğu dini gelenekteki Tevratı verdi. Kabahatli olan kahine bir hayvan kurbanı getirdi. Kendi günah ve ayıbını haybana geçmiş olduğunu sembolize ediyor olmasından ellerini kafsının üzerine sürdü. Sonra hayvan kurban edildi, kanı döküldü, günahı gizlenmişti.
+
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Davut bir kralın bir Mesihin gelecek olduğu kahanetinde bulundu. Bu Mesih günahsız, mükemmel suçsuz, masum olacaktı. O acı çekecek, ölecek ve kurban olan önemli bir olacaktı. O kusursuz kurban haline gelecekti. 
+İsa geldiğinde sevgiyi, gerçeği, barışı, alçakgönüllü öğütledi. O mütevazi bir marangoz, ancak zeki bir filazoftu. Günahkar, töbvekar, mütevazi, fakir olanlar tarafından sevilmişti. Sağır, kör, sakat ve kötü ruhlu olanları iyileştirdi. Hatta bir ölüyü bile tekrar yaşama döndürdü. 
+İsa hatta Tanrıyı kendi babası olarak adlandırdı ve bütün insan oğluna mutlak gücün sizi bir baba sevgisiyle sevdiğini gösterdi. Tanrı insanlarla kendi çocukları gibi iyi ilişki kurmak istedi. Ancak bir problem vardı. Onlar hala günahkardılar ve Tanrı kutsaldır. İnsanı Tanrı’sından ayrı düşürmüş insan oğlunun günahı Adem ile başlar. Ve Mesih onları tekrar bir araya getirmek için ne yapması gerektiğini biliyordu. Vaftiz Yahya İsa’nın sözünün kehanetinde bulundu. Bak dünyanın günahlarını ortadan kaldıran Tanrıı’nın kuzusu. O kutsaldı, saptı, mükemmeldi ve günah için beden ödemeye layıktı. Günahkarlar için takasta masum olan, günahkar insanlar için takasta kutsal kişi. Bunu insan oğlunun günahının bedenini ödemek için, onları günah köleliğinden özgür kılmak için ve Adem’in kaybetmiş olduğu onlara geri vermek için Tanrıyla mükemmel bir ilişki.
+
+</div>
+
+<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+Tanrı İsa’yı peygamberler tarafından yazılanları yerine getirmek için kurban etti. Dünyanın günahlarını, sizinkilerin ve benim günahlarımı ortada kaldıran Tanrı’nın kuzusu hlaine gelecekti. Fakat orada durmadı, Tanrı üç gün sonra İsayı Mesihi, ona inananlara söz verdiği gibi ölümden diriltip yükseltti. Böylece onlar da tekrar sonsuz yaşama yükselecekler. Bundan sonra İsa öğrencilerine tekrar geri geleceğine söz verdi. Ama bu defa yargılayan ve kral olarak. Mesih Tanrı’nın insan oğluna bir armağanıdır. Günahların içinde ölmeyip Tanrı’dan ayrılmayacak oldukları, ancak İsa’nın kurban edilişine alarak onunla mükemmel bir ilişkiye geri dönebilirlerdi. Fakat her hangi bir hediye gibi bu da alana kadar sizin değildir.         
+</div>
+
+<div style="width:560px;margin-top:35px;margin-bottom:30px;text-align:center">
+<b>Do you accept Jesus as your savior?</b>    
+</div>
+
+<div style="width:560px;margin-top:10px;margin-bottom:25px;text-align:center">
+    <span style="margin-right:20px;">
+        <a class="btn btn-primary" href="{% url 'webpages:acceptform' %}?accepted=yes">Accpept</a>
+    </span>
+    <span>
+        <a class="btn btn-warning" href="{% url 'webpages:acceptform' %}?accepted=no">Not This Time</a>
+    </span>
+</div>
+
+</div><!--/.content-->
+</div><!--/.wrapper-->
+{% endblock %}
+
