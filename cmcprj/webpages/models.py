@@ -18,10 +18,10 @@ class UserAccess(models.Model):
 
 class AccessLocation(models.Model):
     access_id = models.OneToOneField(UserAccess)
-    country = models.CharField(max_length=50)
-    city = models.CharField(max_length=50)
-    lat = models.FloatField()
-    lon = models.FloatField()
+    country = models.CharField(max_length=50,null=True,blank=True)
+    city = models.CharField(max_length=50,null=True,blank=True)
+    lat = models.FloatField(null=True,blank=True)
+    lon = models.FloatField(null=True,blank=True)
     timestamp = models.DateTimeField(auto_now=True)
     
     @classmethod
