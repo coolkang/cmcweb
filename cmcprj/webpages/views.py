@@ -131,7 +131,8 @@ def acceptform(request):
         accessid = request.session['accessid']
         useraccess = UserAccess.objects.get(id=accessid)
         useraccess.accepted = accepted
-        useraccess.save()         
+        useraccess.save()
+        request.session['accepted'] = accepted         
         return render(request, ('%s/acceptform.html' % url_path), 
             {'accepted':accepted, 'mssg':''})
     # POST method
@@ -171,7 +172,6 @@ def acceptform(request):
 
 
 
-
 def thanks(request):
     # First, check if the current user has come through previous pages.
     # If not, send the user to the front page where a message is. 
@@ -179,8 +179,10 @@ def thanks(request):
         return redirect('webpages:index')
     url_path = request.session['url_path']
     has_email = request.session['has_email']
+    accepted = request.session['accepted']
     request.session.clear() # Clear session data
-    return render(request,('%s/thanks.html' % url_path),{'has_email':has_email})
+    return render(request,('%s/thanks.html' % url_path),{'has_email':has_email, 
+        'accepted':accepted})
     
 
 

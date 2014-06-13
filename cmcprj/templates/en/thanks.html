@@ -10,32 +10,39 @@
 <div class="wrapper">
 
 	
-    {% if has_email %}
+    {% if has_email and accepted %}
 	<img class="promo" src="{% static 'img/promo_3_en.png' %}"/>
 	
-	<div class="content">
-	
-		<div style="padding-top:30px">
-			<b>Hadiye English</b>
-		</div>
-		
-		<h3>Thank you! You will receive an email that tells you of Jesus more.</h3>
-	
+	<div class="content">	
+		<h3>Congratulations on your decision to accept Christ.</h3>
+        <h3>We will be in touch with you shortly.</h3>
 	</div>
 	
-	
-    {% else %}
+    {% elif has_email and accepted == False %}
 	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
 	
 	<div class="content">
-	
-		<div style="padding-top:30px">
-			<b>Hadiye English</b>
-		</div>
-		
-		<h3>Okay! We hope to see you next time.</h3>
+        <h3>Thank you for your interest.</h3>
+        <h3>We will be in touch with you shortly.</h3>
 	</div>
         
+    {% elif has_email == False and accepted %}
+	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+	
+	<div class="content">
+        <h3>Congratulations on your decision to accept Christ. We hope to see you again.</h3>
+        <h3>Jesus loves you, and he will be with you always.</h3>
+	</div> 
+    
+    {% else %}
+
+	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+	
+	<div class="content">
+        <h3>Thank you for your visit! We hope to see you again.</h3>
+        <h3>Jesus loves you, and he is waiting for you to receive the gift.</h3>
+	</div> 
+                   
     {% endif %}
 	
 </div>
