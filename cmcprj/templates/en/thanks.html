@@ -10,7 +10,7 @@
 <div class="wrapper">
 
 	
-    {% if has_email and accepted %}
+    {% if has_email and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_3_en.png' %}"/>
 	
 	<div class="content">	
@@ -18,7 +18,7 @@
         <h3>We will be in touch with you shortly.</h3>
 	</div>
 	
-    {% elif has_email and accepted == False %}
+    {% elif has_email and accepted == 'no' %}
 	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
 	
 	<div class="content">
@@ -26,7 +26,7 @@
         <h3>We will be in touch with you shortly.</h3>
 	</div>
         
-    {% elif has_email == False and accepted %}
+    {% elif has_email == False and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
 	
 	<div class="content">

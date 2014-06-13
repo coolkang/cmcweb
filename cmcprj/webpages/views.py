@@ -132,7 +132,8 @@ def acceptform(request):
         useraccess = UserAccess.objects.get(id=accessid)
         useraccess.accepted = accepted
         useraccess.save()
-        request.session['accepted'] = accepted         
+        request.session['accepted'] = accepted     
+        print 'in session, accepted', request.session['accepted']    
         return render(request, ('%s/acceptform.html' % url_path), 
             {'accepted':accepted, 'mssg':''})
     # POST method
