@@ -58,3 +58,4 @@ cmcprj/cmcprj/settings/production.py
 *.sqlite
 cmcprj/cmcprj/settings/local.py
 cmcprj/cmcprj/settings/local_sqlite.py
+cmcprj/cmcprj/settings/sqlite.py
