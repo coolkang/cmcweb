@@ -1,4 +1,4 @@
-﻿{% extends "base/basic.html" %}
+﻿{% extends "base/basic_arabic.html" %}
 
 {% block content %}
 
@@ -31,15 +31,15 @@
 </div>
 
 <div style="width:560px;margin-top:35px;margin-bottom:30px;text-align:center">
-<b>Do you accept Jesus as your savior?</b>    
+<b>هل تريد ان تستقبل هدية الله؟</b>    
 </div>
 
 <div style="width:560px;margin-top:10px;margin-bottom:25px;text-align:center">
     <span style="margin-right:20px;">
-        <a class="btn btn-primary" href="{% url 'webpages:acceptform' %}?accepted=yes">Accpept</a>
+        <a class="btn btn-primary" href="{% url 'webpages:acceptform' %}?accepted=yes">نعم</a>
     </span>
     <span>
-        <a class="btn btn-warning" href="{% url 'webpages:acceptform' %}?accepted=no">Not This Time</a>
+        <a class="btn btn-warning" href="{% url 'webpages:acceptform' %}?accepted=no">لا</a>
     </span>
 </div>
 

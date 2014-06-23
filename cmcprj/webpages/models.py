@@ -16,6 +16,7 @@ class UserAccess(models.Model):
             accepted=accepted)
         return useraccess
 
+
 class AccessLocation(models.Model):
     access_id = models.OneToOneField(UserAccess)
     country = models.CharField(max_length=50,null=True,blank=True)
