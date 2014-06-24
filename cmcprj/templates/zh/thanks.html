@@ -10,32 +10,39 @@
 <div class="wrapper">
 
 	
-    {% if has_email %}
-	<img class="promo" src="{% static 'img/promo_3_zh.png' %}"/>
+    {% if has_email and accepted == 'yes' %}
+	<img class="promo" src="{% static 'img/promo_3_en.png' %}"/>
 	
-	<div class="content">
-	
-		<div style="padding-top:30px">
-			<b>Hadiye Chinese</b>
-		</div>
-		
-		<h3>Thank you! You will receive an email that tells you of Jesus more.</h3>
-	
+	<div class="content">	
+		<h3>祝贺你决志接受耶稣</h3>
+        <h3>很快我们会和你联系</h3>
+
 	</div>
 	
-	
-    {% else %}
-	<img class="promo" src="{% static 'img/promo_4_zh.png' %}"/>
+    {% elif has_email and accepted == 'no' %}
+	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
 	
 	<div class="content">
-	
-		<div style="padding-top:30px">
-			<b>Hadiye Chinese</b>
-		</div>
-		
-		<h3>Okay! We hope to see you next time.</h3>
+        <h3>感谢你能感兴趣</h3>
+        <h3>很快我们会联系你</h3>
 	</div>
         
+    {% elif has_email == False and accepted == 'yes' %}
+	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+	
+	<div class="content">
+        <h3>恭喜你决定接受基督。我们希望再次见到你. 耶稣爱你， 他会永远和你在一起。</h3>
+	</div> 
+    
+    {% else %}
+
+	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+	
+	<div class="content">
+        <h3>谢谢你的拜访！我们真诚的盼望再见到你。</h3>
+        <h3>耶稣爱你，他等待着你接受这份礼物。</h3>
+	</div> 
+                   
     {% endif %}
 	
 </div>
