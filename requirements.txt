@@ -1,9 +1,12 @@
 Django==1.6.4
 MySQL-python==1.2.5
-wsgiref==0.1.2
 amqp==1.4.5
 anyjson==0.3.3
 billiard==3.3.0.17
-celery==3.1.11
+geoip2==0.5.1
+ipaddr==2.1.11
 kombu==3.0.16
+maxminddb==0.3.3
 pytz==2014.2
+requests==2.3.0
+wsgiref==0.1.2
