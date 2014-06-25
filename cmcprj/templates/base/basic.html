@@ -38,13 +38,15 @@
 	$(document).ready(function(){
 	
 		var wrapper_height = $(".content").height() + $(".video").height() + 160; // add margin
-		var page_height = wrapper_height + $(".top_bar").height() + 29; // add padding
+		
 		
 		if(wrapper_height < 760)
 		{
 			wrapper_height = 760;
 		}
 		
+		var page_height = wrapper_height + $(".top_bar").height() + 29; // add padding
+
 		if(page_height < $(window).height())
 		{
 			page_height = $(window).height();
@@ -52,11 +54,11 @@
 		
 		
 		
-		$(".wrapper").height(wrapper_height);
+		$(".wrapper").height(page_height);
 		$("body").height(page_height);
-		$(".bg_left_overlay").height(page_height);
-		$(".bg_right_overlay").height(page_height);
-		$(".bg_pattern_overlay").height(page_height);
+		$(".bg_left_overlay").height(page_height+50);
+		$(".bg_right_overlay").height(page_height+50);
+		$(".bg_pattern_overlay").height(page_height+50);
 	});
 	</script>
 	

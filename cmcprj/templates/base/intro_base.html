@@ -40,9 +40,8 @@
     <script src="{% static 'bs/js/bootstrap.min.js' %}"></script>
 
     <script>
-
         $(document).ready( function() {
-            window.setInterval(window.location.href="{% url 'webpages:index' %}?langcode={{code}}", 16000);
+            setTimeout(function() {location.href="message"}, 18000);
         });
     </script>
 </body>
