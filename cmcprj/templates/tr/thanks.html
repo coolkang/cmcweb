@@ -10,32 +10,47 @@
 <div class="wrapper">
 
 	
-    {% if has_email %}
+    {% if has_email and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_3_tr.png' %}"/>
+
+    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
 	
-	<div class="content">
-	
-		<div style="padding-top:30px">
-			<b>Hadiye Turkish</b>
-		</div>
-		
-		<h3>Thank you! You will receive an email that tells you of Jesus more.</h3>
-	
+	<div class="content">	
+		<h3>İsa'ya iman etmenizi tebrik ederiz.</h3>
+        <h3>Yakın zamanda haber vereceğiz.</h3>
 	</div>
 	
-	
-    {% else %}
+    {% elif has_email and accepted == 'no' %}
 	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
 	
+    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+    
 	<div class="content">
-	
-		<div style="padding-top:30px">
-			<b>Hadiye Turkish</b>
-		</div>
-		
-		<h3>Okay! We hope to see you next time.</h3>
+        <h3>İlginizden dolayı teşekkür ederiz.</h3>
+        <h3>Yakın zamanda haber vereceğiz.</h3>
 	</div>
         
+    {% elif has_email == False and accepted == 'yes' %}
+	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
+	
+    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+    
+	<div class="content">
+        <h3>İsa'ya iman etmenizi tebrik ederiz. Yine bekleriz.</h3>
+        <h3>İsa sizi seviyor, armağanı almanızı bekliyor.</h3>
+	</div> 
+    
+    {% else %}
+
+	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
+	
+    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+    
+	<div class="content">
+        <h3>Ziyaret ettiğiniz için teşekkür ederiz! Yine bekleriz.</h3>
+        <h3>İsa sizi seviyor, armağanı almanızı bekliyor.</h3>
+	</div> 
+                   
     {% endif %}
 	
 </div>
