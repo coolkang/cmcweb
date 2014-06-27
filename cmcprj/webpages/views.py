@@ -25,10 +25,12 @@ logger = logging.getLogger(__name__)
 
 
 # URL path dictionary for supported languages (plus country codes).
-urlpath_dict = {'en':'en', 'ko':'ko', 'tr':'tr', 'ar':'ar', 'ar-eg':'ar', 
-    'zh':'zh', 'zh-cn':'zh'}
-lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),
-    ('ko',u'한국어')]
+urlpath_dict = {'en':'en', 'tr':'tr', 'ar':'ar', 'ar-eg':'ar', 'ar-dz':'ar',
+    'ar-bh':'ar', 'ar-iq':'ar', 'ar-jo':'ar', 'ar-kw':'ar', 'ar-lb':'ar',
+    'ar-ly':'ar', 'ar-ma':'ar', 'ar-om':'ar', 'ar-qa':'ar', 'ar-sa':'ar',
+    'ar-sy':'ar', 'ar-tn':'ar', 'ar-ae':'ar', 'zh':'zh', 'zh-cn':'zh'}
+    
+lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),]
 
 
 def sendmail(lang, to_mail):
