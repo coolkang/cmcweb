@@ -1,0 +1,48 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Hadiye</title>
+    
+    <link rel="stylesheet" href="{% static 'bs/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style_intro.css' %}"/>
+    <!--
+    <script src="{% static 'jquery/jquery-1.11.1.min.js' %}"></script>
+    -->
+
+
+</head>
+<body dir="rtl">
+    
+	<div class="top_bar">
+        {% for code, label in lang_choices %}
+            {% if code != curr_lang %}
+            <span style="margin-left:5px;">
+                <a href="{% url 'webpages:index' %}?langcode={{code}}">{{label}}</a>
+            </span>
+            {% endif %}
+        {% endfor %}
+    </div>
+	
+	
+    {% block content %}
+    
+    {% endblock %}
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- bootstraps javascript -->    
+    <script src="{% static 'bs/js/bootstrap.min.js' %}"></script>
+
+    <script>
+        $(document).ready( function() {
+            setTimeout(function() {location.href="message"}, 9000);
+        });
+    </script>
+</body>
+</html>

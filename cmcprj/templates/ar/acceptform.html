@@ -12,7 +12,7 @@
 {% if accepted == 'yes' %}
 <img class="promo" src="{% static 'img/promo_ar.png' %}"/>
 
-<div style="margin-top:30px;margin-right:650px;"><a href="/message">Back to Message</a></div>
+<div style="margin-top:30px;margin-right:650px;"><a href="/message">الرسالة إلى عودة</a></div>
 
 <div class="content">
 
@@ -75,7 +75,7 @@
 {% else %}
 <img class="promo" src="{% static 'img/promo_2_ar.png' %}"/>
 
-<div style="margin-top:30px;margin-right:650px;"><a href="/message">Back to Message</a></div>
+<div style="margin-top:30px;margin-right:650px;"><a href="/message">الرسالة إلى عودة</a></div>
 
 <div class="content">
 <h3>استقبال الهدية لا يكلفك شئ. الله اعطانا هذه الهدية بدون تكلفة، واى شخص يستطيع ان ياخذها</h3>
@@ -96,7 +96,7 @@
 
 {% if mssg %}
 <div style="width:560px;margin-top:30px;margin-bottom:0px;">
-<b ><font style="color:#FF6633;">{{mssg}}</font></b>   
+<b ><font style="color:#FF6633;">فضلك من الإلكتروني بريدك أكتب</font></b>   
 </div>
 
 {% endif %}
@@ -104,8 +104,8 @@
 {% csrf_token %}
 <div class="row">
     <div class="col-md-12"> 
-        <label class="control-label" style="margin-right:5px;margin-top:5px;">البريد الإلكتروني:</label>
-        <input class="form-control" style="width:250px;margin-top:5px;margin-right:10px;" type="text" id="txtEmail" name="email" placeholder="" />
+        <label class="control-label" style="margin-right:5px;margin-top:5px;">الإلكتروني بريدك:</label>
+        <input class="form-control" style="width:250px;margin-top:5px;margin-right:10px;" type="text" id="txtEmail" name="email" placeholder="الإلكتروني بريدك أكتب..." />
         <input class="btn btn-success"  style="margin-right:10px;margin-top:5px;" type="submit" id="btnValidate" name="yes_email" value="إِرسال" />    
         <input class="btn btn-warning" style="margin-top:5px;" type="submit" name="no_email" value="لا" />     
         <input type="hidden" name="accepted" value="{{accepted}}">    
