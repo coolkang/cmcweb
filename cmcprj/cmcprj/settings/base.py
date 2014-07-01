@@ -90,7 +90,7 @@ CONFIGS_DIR = os.path.join(BASE_DIR, 'CONFIGS')
 INFO_EMAIL = 'hadiye.info@gmail.com'
 
 # Google Analytics ID
-GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-52451035-1'
+#GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-52451035-1'
 
 
 
