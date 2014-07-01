@@ -31,6 +31,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'analytical', # Google Analytical
     'webpages',
     'relation',
 )
@@ -87,6 +88,9 @@ CONFIGS_DIR = os.path.join(BASE_DIR, 'CONFIGS')
 
 # website email
 INFO_EMAIL = 'hadiye.info@gmail.com'
+
+# Google Analytics ID
+GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-52451035-1'
 
 
 
