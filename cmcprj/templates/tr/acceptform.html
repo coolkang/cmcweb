@@ -12,7 +12,7 @@
 {% if accepted == 'yes' %}
 <img class="promo" src="{% static 'img/promo_tr.png' %}"/>
 
-<div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+<div style="margin-top:30px;margin-left:650px;"><a href="/message">Vaaza geri dön</a></div>
 
 <div class="content">    
 
@@ -74,7 +74,7 @@ Romalılar 5:1 ayete Pavlus, aklanmamız için İsa'nın bizim için feda ettiğ
 {% else %}
 <img class="promo" src="{% static 'img/promo_2_tr.png' %}"/>
 
-<div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+<div style="margin-top:30px;margin-left:650px;"><a href="/message">Vaaza geri dön</a></div>
 
 <div class="content">
 <h3>Armağanı almak için bedelini ödemek gerekmiyor. Tanrı bize bedelsiz bu armağanı verdi, herkes alabilir. </h3>
@@ -95,7 +95,7 @@ Eğer sorunuz yada yardıma ihtiyacınız varsa biz yardım edeceğiz.
 
 {% if mssg %}
 <div style="width:560px;margin-top:30px;margin-bottom:10px;">
-<b ><font style="color:#FF6633;">{{mssg}}</font></b>   
+<b ><font style="color:#FF6633;">Lütfen e-posta adresinizi giriniz</font></b>   
 </div>
 
 
@@ -105,8 +105,8 @@ Eğer sorunuz yada yardıma ihtiyacınız varsa biz yardım edeceğiz.
 <div class="row">
     <div class="col-md-12"> 
         <label class="control-label" style="margin-right:5px;margin-top:5px;">E-posta:</label>
-        <input class="form-control" style="width:250px;margin-top:5px;margin-right:10px;" type="text" id="txtEmail" name="email" placeholder="type your email..." />
-        <input class="btn btn-success"  style="margin-right:10px;margin-top:5px;" type="submit" id="btnValidate" name="yes_email" value="Sunmak" />    
+        <input class="form-control" style="width:250px;margin-top:5px;margin-right:10px;" type="text" id="txtEmail" name="email" placeholder="E-posta adresinizi yazin..." />
+        <input class="btn btn-success"  style="margin-right:10px;margin-top:5px;" type="submit" id="btnValidate" name="yes_email" value="Evet" />    
         <input class="btn btn-warning" style="margin-top:5px;" type="submit" name="no_email" value="Hayır" />     
         <input type="hidden" name="accepted" value="{{accepted}}">    
     </div>

@@ -15,6 +15,7 @@ from models import UserAccess, AccessLocation
 import geoip2.database
 from geoip2.errors import GeoIP2Error,AddressNotFoundError
 import ConfigParser
+import codecs
 
 
 # set up logging
@@ -32,8 +33,27 @@ urlpath_dict = {'en':'en', 'tr':'tr', 'ar':'ar', 'ar-eg':'ar', 'ar-dz':'ar',
     
 lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),]
 
+zh = ['http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_410-jf-0-0_1343780049-MP4-320-240-150000.mp4',
+        'https://www.hadiye.org/link?uaid=%s&lang=zh&link=http://brightcove04.brightcove.com/21/1226740748001/201305/1690/1226740748001_2418283993001_My-Last-Day-Uyghur-1-1-80856.mp4',
+        'https://www.hadiye.org/link?uaid=%s&lang=zh&link=http://brightcove04.brightcove.com/29/1226740748001/83/GSFN_529-0-La_Busqueda_The_Search_1351531803-MP4-320-240-150000.mp4']
+        
+tr = ['http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_1942-jf-0-0_1343442320-MP4-320-240-150000.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201401/1593/1226740748001_3105942491001_Magdalena--60-min--Turkish-1-1-87055.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201405/2644/1226740748001_3597062364001_Prize3-Turkish-720.mp4',
+        'http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_1942-cl-0-0_1343442379-MP4-320-240-150000.mp4',
+        'http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_1942-mld-0-0_1343442390-MP4-320-240-150000.mp4'] 
 
-def sendmail(lang, to_mail):
+ar = ['http://brightcove04.brightcove.com/29/1226740748001/971/WESS_53441-jf-0-0_1349446508-MP4-320-240-150000.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201312/2696/1226740748001_2930096866001_Magdalena--60-min--Arabic--Modern-Standard--Egyptian--1-1-86983.mp4',
+        'http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_22658-mld-0-0_1343442396-MP4-320-240-150000.mp4',
+        'http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_22658-cl-0-0_1343442349-MP4-320-240-150000.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201405/1616/1226740748001_3577767019001_Prize3-Arabic-720.mp4']
+
+links_dict = {'zh':zh, 'tr':tr, 'ar':ar}
+
+
+
+def sendmail(lang, to_mail, accessid):
     '''
     It sends a follow up emails to visitors who left their contact info. 
     '''
@@ -41,9 +61,29 @@ def sendmail(lang, to_mail):
     config = ConfigParser.ConfigParser()
     config_file = 'webpage_%s.cfg' % lang
     path = os.path.join(settings.CONFIGS_DIR, config_file)
-    config.read(path)
-    subject = config.get('Email', 'subject')
-    message = config.get('Email', 'message')
+    
+    # TODO: improve this part.
+    if lang == 'ar':
+        subject = r'محبة الله'
+        message = r'''شكرا لزيارتك موقعنا www.hadiye.org.
+إذا كان لديك أي سؤال، وارسل البريد الإلكتروني إلى info@hadiye.org.
+وسوف نرسل لك المزيد من المحتويات التي قد تساعدك على النحو التالي؛
+شكرا.
+'''
+    else:
+        #config.read(path)
+        config.readfp(codecs.open(path, 'r','utf8'))
+        subject = config.get('Email', 'subject')
+        message = config.get('Email', 'message')
+        
+    url_str = "http://hadiye.org/relation/link?uaid=%s&lang=%s&link=%s"
+        
+    links = links_dict[lang]
+    for link in links:
+        str = url_str % (accessid, lang, link)
+        message = message + '\n\n' + str
+             
+        
     from_mail = settings.INFO_EMAIL
     recipient_list = [to_mail]
     
@@ -158,7 +198,7 @@ def acceptform(request):
                 useraccess.save()
                 request.session['has_email'] = True
                 # send email
-                sendmail(url_path, email)
+                sendmail(url_path, email, accessid)
                 
                 return redirect('webpages:thanks')     
             else: # if empty email, ask again
