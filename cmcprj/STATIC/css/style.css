@@ -177,6 +177,14 @@ h3
 	margin-top:25px;
 }
 
+.back_to_message_ar
+{
+	width:100%; 
+	text-align:left; 
+	padding-left:25px;
+	margin-top:25px;
+}
+
 @media screen and (max-width: 1280px)
 {
 	.bg_right_overlay, .bg_left_overlay, .bg_pattern_overlay

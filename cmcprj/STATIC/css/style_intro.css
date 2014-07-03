@@ -116,4 +116,23 @@ video
     width:100%;
   }
 }  
+
+@media screen and (max-width:560px)
+{
+    video, .frame_overlay
+    {
+        display:none;
+    }
+
+    .top_bar
+    {
+        margin-left:25px;
+        left:0;
+    }
+
+    .top_bar span, .top_bar a
+    {
+        color: #fff;
+    }
+}
   
