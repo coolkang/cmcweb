@@ -13,7 +13,7 @@
     {% if has_email and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_3_tr.png' %}"/>
 
-    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Vaaza geri dön</a></div>
+    <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
 	
 	<div class="content">	
 		<h3>İsa'ya iman etmenizi tebrik ederiz.</h3>
@@ -23,7 +23,7 @@
     {% elif has_email and accepted == 'no' %}
 	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
 	
-    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Vaaza geri dön</a></div>
+    <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
     
 	<div class="content">
         <h3>İlginizden dolayı teşekkür ederiz.</h3>
@@ -33,7 +33,7 @@
     {% elif has_email == False and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
 	
-    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Vaaza geri dön</a></div>
+    <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
     
 	<div class="content">
         <h3>İsa'ya iman etmenizi tebrik ederiz. Yine bekleriz.</h3>
@@ -44,7 +44,7 @@
 
 	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
 	
-    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Vaaza geri dön</a></div>
+    <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
     
 	<div class="content">
         <h3>Ziyaret ettiğiniz için teşekkür ederiz! Yine bekleriz.</h3>
