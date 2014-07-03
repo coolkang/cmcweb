@@ -13,7 +13,7 @@
     {% if has_email and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_3_en.png' %}"/>
 
-    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+    <div class="back_to_message"><a href="/message">Back to Message</a></div>
 	
 	<div class="content">	
 		<h3>Congratulations on your decision to accept Christ.</h3>
@@ -23,7 +23,7 @@
     {% elif has_email and accepted == 'no' %}
 	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
 	
-    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+    <div class="back_to_message"><a href="/message">Back to Message</a></div>
     
 	<div class="content">
         <h3>Thank you for your interest.</h3>
@@ -33,7 +33,7 @@
     {% elif has_email == False and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
 	
-    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+    <div class="back_to_message"><a href="/message">Back to Message</a></div>
     
 	<div class="content">
         <h3>Congratulations on your decision to accept Christ. We hope to see you again.</h3>
@@ -44,7 +44,7 @@
 
 	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
 	
-    <div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+    <div class="back_to_message"><a href="/message">Back to Message</a></div>
     
 	<div class="content">
         <h3>Thank you for your visit! We hope to see you again.</h3>

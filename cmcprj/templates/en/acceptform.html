@@ -12,59 +12,59 @@
 {% if accepted == 'yes' %}
 <img class="promo" src="{% static 'img/promo_en.png' %}"/>
 
-<div style="margin-top:30px;margin-left:650px;"><a href="/message">Back to Message</a></div>
+<div class="back_to_message"><a href="/message">Back to Message</a></div>
 
 <div class="content">
 
 	<h3>Jesus Christ is God’s precious and perfect gift to us.</h3>
 
-	<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+	<div>
     He is a heaven-sent gift, willingly given at great cost because we were in desperate need. The Father’s offer of salvation through His Son is both personal and universal. (John 3:16) Whoever receives Him discovers His unlimited worth.
 	</div>
 
 	<h3>God’s gift is preventive.</h3>
 
-	<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+	<div>
     When Jesus becomes our personal Savior, we’re granted forgiveness. He frees us from condemnation for our sin. (Romans 8:1) This divine gift prevents the believer from having to face eternal death, which would mean permanent separation from God.
 	</div>
 
 
 	<h3>God’s gift is eternal.</h3>
 
-	<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+	<div>
     What Jesus brings lasts forever. From the day of our salvation, Christ’s Spirit dwells within us and never leaves (John 14:16). As permanent members of God’s family, we have an inheritance in heaven that can neither spoil nor pass away. (1 Peter 1:3-5).
 	</div>
 
 
 	<h3>God’s gift is full of Love.</h3>
 
-	<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+	<div>
     Unconditional love motivated the Father to sacrifice His Son in our place. Not a single one of us deserved it. At some point, we have all sinned. (Romans 3:10) Each of us has turned away from God to follow our own desires. In spite of who we are, God set His affection on us and proved it through the life and death of His Son Jesus. By His love, we are rescued from bondage to sin and transformed into the people He designed us to be.
 	</div>
 
 	<h3>God’s gift is Peace-bearing.</h3>
 
-	<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+	<div>
     Peace that's rooted in good situations isn't really peace at all. It's a brittle kind of harmony between man and the world, and it crumbles very easily. Jesus Christ offers true peace—a lasting contentment that is unbreakable, no matter what happens. However, a sinful life makes peace impossible. A person cannot experience the promise of God's care when he or she is acting in defiance to His will. So when a believer expresses faith in Jesus, the war for self-rule ends.
 	</div>
 
-    <div style="width:560px;margin-top:30px;margin-bottom:30px;">
+    <div>
     Submission to the Lord allows His peace to fill your life. When the Holy Spirit lives within us, we can approach everything in life with confidence and serenity. The only way to get this lasting peace is through a relationship with Jesus Christ.
     </div>
 
-    <div style="width:560px;margin-top:30px;margin-bottom:30px;">
+    <div>
     In Romans 5:1, Paul explains that to be justified—that is, declared no longer guilty—we must accept the sacrifice Christ made in our place. Justification makes us right with God and opens our hearts to all that He has come to offer us.
     </div>
     
-    <div style="width:560px;margin-top:30px;margin-bottom:30px;">
+    <div>
     Have you told God that you recognize His Son's loving sacrifice was made on your behalf?
     </div>
 
-    <div style="width:560px;margin-top:30px;margin-bottom:30px;">
+    <div>
     <b>If you have accepted God’s offer of salvation through Jesus Christ, today is your spiritual birthday.</b>
     </div>
     
-    <div style="width:560px;margin-top:30px;margin-bottom:30px;">
+    <div>
     <b>Please leave give us your email. We will email you and help you learn more about what it means to know more about God.</b>
     </div>    
 
@@ -77,19 +77,19 @@
 
 	<h3>We can help you to make a right decision.</h3>
 
-	<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+	<div>
 	It doesn’t cost you to receive a gift. God gave us this gift without a price, and anyone can receive it.
 	</div>
     
-	<div style="width:560px;margin-top:30px;margin-bottom:30px;">    
+	<div>
     Jesus Christ is God’s precious and perfect gift to us. He is a heaven-sent gift, willingly given at great cost because we were in desperate need. The Father’s offer of salvation through His Son is both personal and universal. (John 3:16) Whoever receives Him discovers His unlimited worth.
     </div>
 
-    <div style="width:560px;margin-top:30px;margin-bottom:30px;">    
+    <div>
     <b>But like any gift, it’s not yours until you take it.</b>
     </div>
 
-	<div style="width:560px;margin-top:30px;margin-bottom:30px;">
+	<div>
 	<b ><font style="color:#3399FF;">If you want to know more about Jesus before you making a decision, please give us your email. We will send you more information.</font></b>   
 	</div>
 
@@ -97,7 +97,7 @@
 {% endif %}
 
 {% if mssg %}
-	<div style="width:560px;margin-top:30px;margin-bottom:10px;">
+	<div>
 	<b ><font style="color:#FF6633;">{{mssg}}</font></b>   
 	</div>
 
@@ -105,7 +105,7 @@
 {% endif %}
 
 
-	<form class="form-inline" style="width:560px; margin:0 auto; padding-bottom:10px;" action="{% url 'webpages:acceptform' %}?accepted={{accepted}}" method="post">
+	<form class="form-inline" action="{% url 'webpages:acceptform' %}?accepted={{accepted}}" method="post">
 	{% csrf_token %}
     
 	<div class="row">
