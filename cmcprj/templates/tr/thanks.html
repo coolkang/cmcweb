@@ -12,6 +12,8 @@
 	
     {% if has_email and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_3_tr.png' %}"/>
+	<img class="promo560" src="{% static 'img/560/promo_3_tr.jpg' %}"/>
+	<img class="promo320" src="{% static 'img/320/promo_3_tr.jpg' %}"/> 
 
     <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
 	
@@ -22,6 +24,8 @@
 	
     {% elif has_email and accepted == 'no' %}
 	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
+	<img class="promo560" src="{% static 'img/560/promo_4_tr.jpg' %}"/>
+	<img class="promo320" src="{% static 'img/320/promo_4_tr.jpg' %}"/> 
 	
     <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
     
@@ -32,6 +36,8 @@
         
     {% elif has_email == False and accepted == 'yes' %}
 	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
+	<img class="promo560" src="{% static 'img/560/promo_4_tr.jpg' %}"/>
+	<img class="promo320" src="{% static 'img/320/promo_4_tr.jpg' %}"/> 
 	
     <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
     
@@ -43,6 +49,8 @@
     {% else %}
 
 	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
+	<img class="promo560" src="{% static 'img/560/promo_4_tr.jpg' %}"/>
+	<img class="promo320" src="{% static 'img/320/promo_4_tr.jpg' %}"/> 
 	
     <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
     

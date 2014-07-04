@@ -185,6 +185,22 @@ h3
 	margin-top:25px;
 }
 
+.promo560
+{
+	display: none;
+}
+
+.promo320
+{
+	display: none;
+}
+
+.promo
+{
+	width: 100%;
+}
+
+
 @media screen and (max-width: 1280px)
 {
 	.bg_right_overlay, .bg_left_overlay, .bg_pattern_overlay
@@ -242,4 +258,29 @@ h3
 		width:100%;
 	}
 
+	.promo
+	{
+		display: none;
+	}
+
+	.promo560
+	{
+		display: block;
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 320px)
+{
+	.promo560
+	{
+		display:none;
+	}
+
+	.promo320
+	{
+		display:block;
+		width: 100%;
+	}
 }

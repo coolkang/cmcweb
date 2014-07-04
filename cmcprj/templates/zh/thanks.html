@@ -11,7 +11,9 @@
 
 	
     {% if has_email and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_3_en.png' %}"/>
+	<img class="promo" src="{% static 'img/promo_3_zh.png' %}"/>
+	<img class="promo560" src="{% static 'img/560/promo_3_zh.jpg' %}"/>
+	<img class="promo320" src="{% static 'img/320/promo_3_zh.jpg' %}"/> 
     
     <div class="back_to_message"><a href="/message">返回消息</a></div>
 	
@@ -22,7 +24,9 @@
 	</div>
 	
     {% elif has_email and accepted == 'no' %}
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+	<img class="promo" src="{% static 'img/promo_4_zh.png' %}"/>
+	<img class="promo560" src="{% static 'img/560/promo_4_zh.jpg' %}"/>
+	<img class="promo320" src="{% static 'img/320/promo_4_zh.jpg' %}"/> 
     
     <div class="back_to_message"><a href="/message">返回消息</a></div>
 	
@@ -32,7 +36,9 @@
 	</div>
         
     {% elif has_email == False and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+	<img class="promo" src="{% static 'img/promo_4_zh.png' %}"/>
+	<img class="promo560" src="{% static 'img/560/promo_4_zh.jpg' %}"/>
+	<img class="promo320" src="{% static 'img/320/promo_4_zh.jpg' %}"/> 
     
     <div class="back_to_message"><a href="/message">返回消息</a></div>
 	
@@ -42,7 +48,9 @@
     
     {% else %}
 
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+	<img class="promo" src="{% static 'img/promo_4_zh.png' %}"/>
+	<img class="promo560" src="{% static 'img/560/promo_4_zh.jpg' %}"/>
+	<img class="promo320" src="{% static 'img/320/promo_4_zh.jpg' %}"/> 
 
     <div class="back_to_message"><a href="/message">返回消息</a></div>
 	
