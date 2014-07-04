@@ -49,7 +49,18 @@ ar = ['http://brightcove04.brightcove.com/29/1226740748001/971/WESS_53441-jf-0-0
         'http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_22658-cl-0-0_1343442349-MP4-320-240-150000.mp4',
         'http://brightcove04.brightcove.com/21/1226740748001/201405/1616/1226740748001_3577767019001_Prize3-Arabic-720.mp4']
 
-links_dict = {'zh':zh, 'tr':tr, 'ar':ar}
+en = ['http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_529-jf-0-0_1343439914-MP4-320-240-150000.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201401/1769/1226740748001_3105866259001_Magdalena--60-min--English-1-1-87069.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201303/136/1226740748001_2241999675001_7DWJGrace-1-7-English.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201303/3136/1226740748001_2241999716001_7DWJGrace-2-7-English.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201303/3136/1226740748001_2241999671001_7DWJGrace-3-7-English.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201303/136/1226740748001_2241999683001_7DWJGrace-4-7-English.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201303/1136/1226740748001_2241999673001_7DWJGrace-5-7-English.mp4',
+        'http://brightcove04.brightcove.com/21/1226740748001/201303/1136/1226740748001_2241999686001_7DWJGrace-6-7-English.mp4',
+        'http://aa997190d22ac202e45b-00ed99dd1fad6f1ae9b61d4c75fe96ca.r10.cf1.rackcdn.com/GraceDay07cinematic640x300.jpg',
+        ]
+
+links_dict = {'zh':zh, 'tr':tr, 'ar':ar, 'en':en}
 
 
 
