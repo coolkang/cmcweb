@@ -201,7 +201,7 @@ h3
 }
 
 
-@media screen and (max-width: 1280px)
+@media screen and (max-width: 1024px)
 {
 	.bg_right_overlay, .bg_left_overlay, .bg_pattern_overlay
 	{
