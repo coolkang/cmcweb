@@ -153,7 +153,7 @@ def index(request):
         {'lang_choices':lang_choices, 'curr_lang':request.session['url_path']})
 
 
-# Deprecated
+
 def message(request):
     # Determine a url path based on a user's language.
     # First, check if a user selected a specific language code
