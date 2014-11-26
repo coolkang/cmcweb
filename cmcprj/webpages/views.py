@@ -149,11 +149,11 @@ def index(request):
     request.session['accessid'] = access.id
     # Get a language choice obj list for user's language choice buttons
     
-    return render(request, ('%s/front.html' % request.session['url_path']), 
+    return render(request, ('%s/message.html' % request.session['url_path']), 
         {'lang_choices':lang_choices, 'curr_lang':request.session['url_path']})
 
 
-
+# Deprecated
 def message(request):
     # Determine a url path based on a user's language.
     # First, check if a user selected a specific language code
