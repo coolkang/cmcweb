@@ -29,13 +29,16 @@ logger = logging.getLogger(__name__)
 urlpath_dict = {'en':'en', 'tr':'tr', 'ar':'ar', 'ar-eg':'ar', 'ar-dz':'ar',
     'ar-bh':'ar', 'ar-iq':'ar', 'ar-jo':'ar', 'ar-kw':'ar', 'ar-lb':'ar',
     'ar-ly':'ar', 'ar-ma':'ar', 'ar-om':'ar', 'ar-qa':'ar', 'ar-sa':'ar',
-    'ar-sy':'ar', 'ar-tn':'ar', 'ar-ae':'ar', 'zh':'zh', 'zh-cn':'zh'}
+    'ar-sy':'ar', 'ar-tn':'ar', 'ar-ae':'ar', 'zh':'zh', 'zh-cn':'zh', 
+    'ru':'ru', 'ru-mo':'ru'}
     
-lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),]
+lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),('ru',u'русский')]
 
+
+# Additional content in a follow-up email.
 zh = ['http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_410-jf-0-0_1343780049-MP4-320-240-150000.mp4',
-        'https://www.hadiye.org/link?uaid=%s&lang=zh&link=http://brightcove04.brightcove.com/21/1226740748001/201305/1690/1226740748001_2418283993001_My-Last-Day-Uyghur-1-1-80856.mp4',
-        'https://www.hadiye.org/link?uaid=%s&lang=zh&link=http://brightcove04.brightcove.com/29/1226740748001/83/GSFN_529-0-La_Busqueda_The_Search_1351531803-MP4-320-240-150000.mp4']
+        'http://brightcove04.brightcove.com/21/1226740748001/201305/1690/1226740748001_2418283993001_My-Last-Day-Uyghur-1-1-80856.mp4',
+        'http://brightcove04.brightcove.com/29/1226740748001/83/GSFN_529-0-La_Busqueda_The_Search_1351531803-MP4-320-240-150000.mp4']
         
 tr = ['http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_1942-jf-0-0_1343442320-MP4-320-240-150000.mp4',
         'http://brightcove04.brightcove.com/21/1226740748001/201401/1593/1226740748001_3105942491001_Magdalena--60-min--Turkish-1-1-87055.mp4',
@@ -60,7 +63,10 @@ en = ['http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_529-jf-0-0_13
         'http://aa997190d22ac202e45b-00ed99dd1fad6f1ae9b61d4c75fe96ca.r10.cf1.rackcdn.com/GraceDay07cinematic640x300.jpg',
         ]
 
-links_dict = {'zh':zh, 'tr':tr, 'ar':ar, 'en':en}
+ru = ['http://jesusfilmmedia.org/video/1_3934-jf-0-0', 
+        'http://jesusfilmmedia.org/video/1_3934-wl60-0-0']
+
+links_dict = {'zh':zh, 'tr':tr, 'ar':ar, 'en':en, 'ru':ru}
 
 
 
