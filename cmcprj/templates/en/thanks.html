@@ -2,64 +2,54 @@
 {% load staticfiles %}
 {% block content %}
 
-
-<div class="bg_right_overlay"></div>
-<div class="bg_left_overlay"></div>
-<div class="bg_pattern_overlay"></div>
-
 <div class="wrapper">
 
 	
     {% if has_email and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_3_en.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_3_en.png' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_3_en.png' %}"/>
 
     <div class="back_to_message"><a href="/message">Back to Message</a></div>
 	
 	<div class="content">	
-		<h3>Congratulations on your decision to accept Christ.</h3>
-        <h3>We will be in touch with you shortly.</h3>
+		<p id="site-title">God is Love</p>
+		<h4>Congratulations on your decision to accept Christ.</h4>
+         <h4>We will be in touch with you shortly.</h4>
 	</div>
 	
     {% elif has_email and accepted == 'no' %}
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_en.png' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_en.png' %}"/>
 	
     <div class="back_to_message"><a href="/message">Back to Message</a></div>
     
 	<div class="content">
-        <h3>Thank you for your interest.</h3>
-        <h3>We will be in touch with you shortly.</h3>
+		<p id="site-title">God is Love</p>
+         <h4>Thank you for your interest.</h4>
+         <h4>We will be in touch with you shortly.</h4>
 	</div>
         
     {% elif has_email == False and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_en.png' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_en.png' %}"/>
 	
     <div class="back_to_message"><a href="/message">Back to Message</a></div>
     
 	<div class="content">
-        <h3>Congratulations on your decision to accept Christ. We hope to see you again.</h3>
-        <h3>Jesus loves you, and he will be with you always.</h3>
+		<p id="site-title">God is Love</p>
+         <h4>Congratulations on your decision to accept Christ. We hope to see you again.</h4>
+         <h4>Jesus loves you, and he will be with you always.</h4>
 	</div> 
     
     {% else %}
 
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_en.png' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_en.png' %}"/>
-	
     <div class="back_to_message"><a href="/message">Back to Message</a></div>
     
 	<div class="content">
-        <h3>Thank you for your visit! We hope to see you again.</h3>
-        <h3>Jesus loves you, and he is waiting for you to receive the gift.</h3>
+		<p id="site-title">God is Love</p>
+         <h4>Thank you for your visit! We hope to see you again.</h4>
+         <h4>Jesus loves you, and he is waiting for you to receive the gift.</h4>
 	</div> 
                    
     {% endif %}
 	
+
+</div>
+<div style="background-color:#fff">
+	<img src="{% static 'img/pattern.png' %}" style="width:100%" />
 </div>
 {% endblock %}
