@@ -1,9 +1,9 @@
-/* global settings */
+﻿/* global settings */
 body 
 {    
         font-size: 15px;
         font-family: 'avenir next','avenir','lucida grande',tahoma,verdana,arial,sans-serif;
-        width: 960px;
+        width: 100%;
         margin: 0 auto;
 }
 
@@ -15,14 +15,21 @@ body
   padding-left:10px;
   text-align:right;
   
-  background: #fff;
+  background: #f7e3c2;
+
   
   height: 50px;
 }
 
+.top_bar > div 
+{
+	max-width: 720px;
+	margin: 0 auto;
+}
+
 .top_bar a
 {
-	color: #000;
+	color: #916816;
 }
 
 .top_bar a:hover
@@ -130,10 +137,8 @@ h3
 
 .wrapper
 {
-	width: 960px;
-	height: 1250px;
-
-	background-color: #ffffff;
+	max-width: 720px;
+	margin: 0 auto;
 }
 
 .content
@@ -283,4 +288,43 @@ h3
 		display:block;
 		width: 100%;
 	}
+}
+
+#site-title {
+	margin-top: 120px;
+	font-size: 4em;
+	font-family: serif;
+	color: #916816;
+
+}
+
+#description {
+	display:none;
+}
+
+#video-shadow {
+	max-width: 100%;
+	margin-top: -2.5em;
+}
+
+.btn-primary {
+	background-color: #9e005d;
+	border-color: #9e005d;
+}
+
+.btn-warning {
+	background-color: #918a72;
+	border-color: #918a72;
+}
+
+#footer {
+	background-color: #f1ebe0;
+	color: #6b6e71;
+	padding-bottom:120px;
+	display: block;
+}
+
+#footer > div {
+	max-width: 720px;
+	margin: 0 auto;
 }

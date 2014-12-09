@@ -16,7 +16,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cmcweb',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'nimd@123!',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
