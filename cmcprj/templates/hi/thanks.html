@@ -1,0 +1,55 @@
+{% extends "base/basic.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="wrapper">
+
+	
+    {% if has_email and accepted == 'yes' %}
+
+    <div class="back_to_message"><a href="/message">पीछे संदेश</a></div>
+	
+	<div class="content">	
+		<p id="site-title">परमेश्वर प्रेम है</p>
+		<h4>मसीह को ग्रहण करने के निर्णय पर आपको हार्दिक बधाइयाँ!</h4>
+         <h4>हम आपसे शीघ्र संपर्क करेंगे।</h4>
+	</div>
+	
+    {% elif has_email and accepted == 'no' %}
+	
+    <div class="back_to_message"><a href="/message">पीछे संदेश</a></div>
+    
+	<div class="content">
+		<p id="site-title">परमेश्वर प्रेम है</p>
+         <h4>रुचि व्यक्त करने के लिए धन्यवाद।</h4>
+         <h4>हम आपसे शीघ्र संपर्क करेंगे।</h4>
+	</div>
+        
+    {% elif has_email == False and accepted == 'yes' %}
+	
+    <div class="back_to_message"><a href="/message">पीछे संदेश</a></div>
+    
+	<div class="content">
+		<p id="site-title">परमेश्वर प्रेम है</p>
+         <h4>मसीह को ग्रहण करने के निर्णय पर आपको हार्दिक बधाइयाँ! आशा है कि आपसे दोबारा भेंट होगी।</h4>
+         <h4>यीशु आपसे प्रेम करते हैं</h4>
+	</div> 
+    
+    {% else %}
+
+    <div class="back_to_message"><a href="/message">पीछे संदेश</a></div>
+    
+	<div class="content">
+		<p id="site-title">परमेश्वर प्रेम है</p>
+         <h4>आने के लिए आपका धन्यवाद! आशा है कि आपसे दोबारा भेंट होगी।</h4>
+         <h4>यीशु आपसे प्रेम करते हैं, और आपके उपहार ग्रहण करने की प्रतिक्षा में हैं।</h4>
+	</div> 
+                   
+    {% endif %}
+	
+
+</div>
+<div style="background-color:#fff">
+	<img src="{% static 'img/pattern.png' %}" style="width:100%" />
+</div>
+{% endblock %}

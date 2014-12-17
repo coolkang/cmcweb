@@ -30,9 +30,9 @@ urlpath_dict = {'en':'en', 'tr':'tr', 'ar':'ar', 'ar-eg':'ar', 'ar-dz':'ar',
     'ar-bh':'ar', 'ar-iq':'ar', 'ar-jo':'ar', 'ar-kw':'ar', 'ar-lb':'ar',
     'ar-ly':'ar', 'ar-ma':'ar', 'ar-om':'ar', 'ar-qa':'ar', 'ar-sa':'ar',
     'ar-sy':'ar', 'ar-tn':'ar', 'ar-ae':'ar', 'zh':'zh', 'zh-cn':'zh', 
-    'ru':'ru', 'ru-mo':'ru'}
+    'ru':'ru', 'ru-mo':'ru', 'hi':'hi'}
     
-lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),('ru',u'русский')]
+lang_choices = [('en',u'English'),('tr',u'Türkçe'),('zh',u'中文'),('ar',u'عربي'),('ru',u'русский'),('hi',u'हिंदी')]
 
 
 # Additional content in a follow-up email.
@@ -66,7 +66,9 @@ en = ['http://brightcove04.brightcove.com/29/1226740748001/s1/WESS_529-jf-0-0_13
 ru = ['http://jesusfilmmedia.org/video/1_3934-jf-0-0', 
         'http://jesusfilmmedia.org/video/1_3934-wl60-0-0']
 
-links_dict = {'zh':zh, 'tr':tr, 'ar':ar, 'en':en, 'ru':ru}
+hi = ['','']
+
+links_dict = {'zh':zh, 'tr':tr, 'ar':ar, 'en':en, 'ru':ru, 'hi':hi}
 
 
 
