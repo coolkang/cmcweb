@@ -12,10 +12,17 @@
 <img id="video-shadow" src="{% static 'img/shadow.png' %}"/>
 
 
-
-
-
 <div class="content">
+
+<center>
+    <span style="font-weight:bold; color:#916816">|</span>&nbsp;<a onclick="showDesc()" style="color:#000; cursor:pointer;">If the video does not play, please click here.</a>&nbsp;<span style="font-weight:bold; color:#916816">|</span>
+</center>
+
+<script>
+	function showDesc() {
+		$('#description').slideDown()
+	}
+</script>
 
 <div id="description">
 <p>
@@ -37,13 +44,7 @@ But he didn’t stop there. Three days later God raised Jesus from the dead as a
 
 </div> <!-- description -->
 
-<center><span style="font-weight:bold; color:#916816">|</span>&nbsp;<a onclick="showDesc()" style="color:#000; cursor:pointer;">If the video does not play, please click here.</a>&nbsp;<span style="font-weight:bold; color:#916816">|</span></center>
 
-<script>
-	function showDesc() {
-		$('#description').slideDown()
-	}
-</script>
 
 <div style="text-align:center">
 <b>Would you like to receive God’s gift?</b>    
