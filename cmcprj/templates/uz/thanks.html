@@ -1,0 +1,49 @@
+{% extends "base/basic.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="wrapper">
+
+	
+    <div class="back_to_message"><a href="/message">Мавзуга қайтиш</a></div>
+    
+    {% if has_email and accepted == 'yes' %}
+
+	<div class="content">	
+		<p id="site-title">Xudo sevgidir</p>
+		<h4>Исо Масиҳни қабул қилганингиз учун табриклаймиз.</h4>
+         <h4>Тез орада сизга хабар берамиз.</h4>
+	</div>
+	
+    {% elif has_email and accepted == 'no' %}
+    
+	<div class="content">
+		<p id="site-title">Xudo sevgidir</p>
+         <h4>Қизиқиш билдирганингиз учун миннатдормиз.</h4>
+         <h4>Тез орада сизга хабар берамиз.</h4>
+	</div>
+        
+    {% elif has_email == False and accepted == 'yes' %}
+    
+	<div class="content">
+		<p id="site-title">God is Love</p>
+         <h4>Бизнинг сайтимизга ташриф буюрганингиз учун миннатдормиз. Яна кўришишимизни истаб қоламиз.</h4>
+         <h4>Исо сизни севади</h4>
+	</div> 
+    
+    {% else %}
+
+	<div class="content">
+		<p id="site-title">Xudo sevgidir</p>
+         <h4>TБизнинг сайтимизга ташриф буюрганингиз учун миннатдормиз. Яна кўришишимизни истаб қоламиз.</h4>
+         <h4>Исо сизни севади, ва У сизнинг Худонинг совғасини олишингизни кутмоқда.</h4>
+	</div> 
+                   
+    {% endif %}
+	
+
+</div>
+<div style="background-color:#fff">
+	<img src="{% static 'img/pattern.png' %}" style="width:100%" />
+</div>
+{% endblock %}

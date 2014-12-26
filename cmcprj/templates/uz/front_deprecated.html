@@ -1,0 +1,24 @@
+{% extends "base/intro_base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div class="wrapper">
+    <div class="content_overlay">
+      <img class="intro-img" style="width:100%;" src="{% static 'img/intro_en.png' %}"/>
+      <img class="intro-img-m" style="width:100%;" src="{% static 'img/intro_en_m.png' %}"/>
+      
+      <a href="message">
+      <span class="open">Open &gt;</span>
+      </a>
+    </div>
+    <div class="frame_overlay">
+      <img style="width:100%" src="{% static 'img/background_2.png' %}"/>
+    </div>
+    
+    <video src="{% static 'video/syber_10_720-0605-con.mp4' %}" autoplay loop preload></video>
+    
+    
+  </div>
+  
+  <div class="color_overlay"></div>
+{% endblock %}
