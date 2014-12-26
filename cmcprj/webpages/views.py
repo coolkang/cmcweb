@@ -70,7 +70,7 @@ hi = ['http://arc.gt/wc9fo','http://arc.gt/vr8wx','http://arc.gt/6f9uk',
         'http://arc.gt/zsrly','http://arc.gt/nywez']
 
 
-uz = ['','']
+uz = ['http://jesusfilmmedia.org/1_3888-jf-0-0/','http://jesusfilmmedia.org/1_3888-wl60-0-0/']
 
 
 links_dict = {'zh':zh, 'tr':tr, 'ar':ar, 'en':en, 'ru':ru, 'hi':hi, 'uz':uz}
