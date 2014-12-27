@@ -88,8 +88,8 @@ def sendmail(lang, to_mail, accessid):
     
     # TODO: improve this part.
     if lang == 'ar':
-        subject = r'محبة الله'
-        message = r'''شكرا لزيارتك موقعنا www.hadiye.org.
+        subject = u'محبة الله'
+        message = u'''شكرا لزيارتك موقعنا www.hadiye.org.
 إذا كان لديك أي سؤال، وارسل البريد الإلكتروني إلى info@hadiye.org.
 وسوف نرسل لك المزيد من المحتويات التي قد تساعدك على النحو التالي؛
 شكرا.
@@ -105,7 +105,7 @@ def sendmail(lang, to_mail, accessid):
     links = links_dict[lang]
     for link in links:
         str = url_str % (accessid, lang, link)
-        message = message + '\n\n' + str
+        message = message + u'\n\n' + str.decode('utf-8')
              
         
     from_mail = settings.INFO_EMAIL
@@ -166,7 +166,7 @@ def index(request):
         {'lang_choices':lang_choices, 'curr_lang':request.session['url_path']})
 
 
-
+'''
 def message(request):
     # Determine a url path based on a user's language.
     # First, check if a user selected a specific language code
@@ -176,7 +176,7 @@ def message(request):
     
     return render(request, ('%s/message.html' % request.session['url_path']), 
         {'lang_choices':lang_choices, 'curr_lang':request.session['url_path']})    
-
+'''
 
 
 def acceptform(request):

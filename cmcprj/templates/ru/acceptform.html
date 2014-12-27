@@ -9,10 +9,9 @@
 
 <div class="wrapper">
 
-{% if accepted == 'yes' %}
-<img class="promo" src="{% static 'img/promo_en.png' %}"/>
+<div class="back_to_message"><a href="/">Назад к Сообщению</a></div>
 
-<div class="back_to_message"><a href="/message">Назад к Сообщению</a></div>
+{% if accepted == 'yes' %}
 
 <div class="content">
 
@@ -72,8 +71,6 @@
     </div>    
 
 {% else %}
-
-<img class="promo" src="{% static 'img/promo_2_en.png' %}"/>
 
 <div class="content">
 

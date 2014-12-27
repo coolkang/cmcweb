@@ -9,13 +9,13 @@
 
 <div class="wrapper">
 
+    <div class="back_to_message"><a href="/">Назад к Сообщению</a></div>
 	
     {% if has_email and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_3_en.png' %}"/>
+
 	<img class="promo560" src="{% static 'img/560/promo_3_en.png' %}"/>
 	<img class="promo320" src="{% static 'img/320/promo_3_en.png' %}"/>
 
-    <div class="back_to_message"><a href="/message">Назад к Сообщению</a></div>
 	
 	<div class="content">	
 		<h3>Поздравляем с решением принять Христа.</h3>
@@ -23,24 +23,20 @@
 	</div>
 	
     {% elif has_email and accepted == 'no' %}
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+
 	<img class="promo560" src="{% static 'img/560/promo_4_en.png' %}"/>
 	<img class="promo320" src="{% static 'img/320/promo_4_en.png' %}"/>
-	
-    <div class="back_to_message"><a href="/message">Назад к Сообщению</a></div>
-    
+	    
 	<div class="content">
         <h3>Благодарим за интерес.</h3>
         <h3>Мы будем на связи с вами.</h3>
 	</div>
         
     {% elif has_email == False and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
+
 	<img class="promo560" src="{% static 'img/560/promo_4_en.png' %}"/>
 	<img class="promo320" src="{% static 'img/320/promo_4_en.png' %}"/>
-	
-    <div class="back_to_message"><a href="/message">Назад к Сообщению</a></div>
-    
+	    
 	<div class="content">
         <h3>Поздравляем с решением принять Христа.</h3>
         <h3>Иисус любит тебя, И Он ждёт, чтобы ты принял подарок.</h3>
@@ -48,12 +44,9 @@
     
     {% else %}
 
-	<img class="promo" src="{% static 'img/promo_4_en.png' %}"/>
 	<img class="promo560" src="{% static 'img/560/promo_4_en.png' %}"/>
 	<img class="promo320" src="{% static 'img/320/promo_4_en.png' %}"/>
-	
-    <div class="back_to_message"><a href="/message">Назад к Сообщению</a></div>
-    
+	    
 	<div class="content">
         <h3>Спасибо за посещение! Мы надеемся увидеть вас ещё.</h3>
         <h3>Иисус любит тебя, И Он ждёт, чтобы ты принял подарок.</h3>

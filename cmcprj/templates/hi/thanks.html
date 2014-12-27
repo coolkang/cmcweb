@@ -4,10 +4,10 @@
 
 <div class="wrapper">
 
+    <div class="back_to_message"><a href="/">पीछे संदेश</a></div>
 	
     {% if has_email and accepted == 'yes' %}
 
-    <div class="back_to_message"><a href="/message">पीछे संदेश</a></div>
 	
 	<div class="content">	
 		<p id="site-title">परमेश्वर प्रेम है</p>
@@ -17,7 +17,6 @@
 	
     {% elif has_email and accepted == 'no' %}
 	
-    <div class="back_to_message"><a href="/message">पीछे संदेश</a></div>
     
 	<div class="content">
 		<p id="site-title">परमेश्वर प्रेम है</p>
@@ -27,7 +26,6 @@
         
     {% elif has_email == False and accepted == 'yes' %}
 	
-    <div class="back_to_message"><a href="/message">पीछे संदेश</a></div>
     
 	<div class="content">
 		<p id="site-title">परमेश्वर प्रेम है</p>
@@ -37,7 +35,6 @@
     
     {% else %}
 
-    <div class="back_to_message"><a href="/message">पीछे संदेश</a></div>
     
 	<div class="content">
 		<p id="site-title">परमेश्वर प्रेम है</p>

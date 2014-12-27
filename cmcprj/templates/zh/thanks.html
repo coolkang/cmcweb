@@ -9,13 +9,10 @@
 
 <div class="wrapper">
 
+    <div class="back_to_message"><a href="/">返回消息</a></div>
 	
     {% if has_email and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_3_zh.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_3_zh.jpg' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_3_zh.jpg' %}"/> 
     
-    <div class="back_to_message"><a href="/message">返回消息</a></div>
 	
 	<div class="content">	
 		<h3>祝贺你决志接受耶稣</h3>
@@ -24,11 +21,7 @@
 	</div>
 	
     {% elif has_email and accepted == 'no' %}
-	<img class="promo" src="{% static 'img/promo_4_zh.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_zh.jpg' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_zh.jpg' %}"/> 
-    
-    <div class="back_to_message"><a href="/message">返回消息</a></div>
+
 	
 	<div class="content">
         <h3>感谢你能感兴趣</h3>
@@ -36,23 +29,12 @@
 	</div>
         
     {% elif has_email == False and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_4_zh.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_zh.jpg' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_zh.jpg' %}"/> 
-    
-    <div class="back_to_message"><a href="/message">返回消息</a></div>
 	
 	<div class="content">
         <h3>恭喜你决定接受基督。我们希望再次见到你. 耶稣爱你， 他会永远和你在一起。</h3>
 	</div> 
     
     {% else %}
-
-	<img class="promo" src="{% static 'img/promo_4_zh.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_zh.jpg' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_zh.jpg' %}"/> 
-
-    <div class="back_to_message"><a href="/message">返回消息</a></div>
 	
 	<div class="content">
         <h3>谢谢你的拜访！我们真诚的盼望再见到你。</h3>

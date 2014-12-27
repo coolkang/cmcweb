@@ -9,13 +9,14 @@
 
 <div class="wrapper">
 
+    <div class="back_to_message"><a href="/">Vaaza geri dön</a></div>
 	
     {% if has_email and accepted == 'yes' %}
+<!--
 	<img class="promo" src="{% static 'img/promo_3_tr.png' %}"/>
 	<img class="promo560" src="{% static 'img/560/promo_3_tr.jpg' %}"/>
 	<img class="promo320" src="{% static 'img/320/promo_3_tr.jpg' %}"/> 
-
-    <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
+-->
 	
 	<div class="content">	
 		<h3>İsa'ya iman etmenizi tebrik ederiz.</h3>
@@ -23,11 +24,10 @@
 	</div>
 	
     {% elif has_email and accepted == 'no' %}
-	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
+<!--	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
 	<img class="promo560" src="{% static 'img/560/promo_4_tr.jpg' %}"/>
 	<img class="promo320" src="{% static 'img/320/promo_4_tr.jpg' %}"/> 
-	
-    <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
+-->	
     
 	<div class="content">
         <h3>İlginizden dolayı teşekkür ederiz.</h3>
@@ -35,24 +35,22 @@
 	</div>
         
     {% elif has_email == False and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
+<!--	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
 	<img class="promo560" src="{% static 'img/560/promo_4_tr.jpg' %}"/>
 	<img class="promo320" src="{% static 'img/320/promo_4_tr.jpg' %}"/> 
-	
-    <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
-    
+-->
+	    
 	<div class="content">
         <h3>İsa'ya iman etmenizi tebrik ederiz. Yine bekleriz.</h3>
         <h3>İsa sizi seviyor, armağanı almanızı bekliyor.</h3>
 	</div> 
     
     {% else %}
-
+<!--
 	<img class="promo" src="{% static 'img/promo_4_tr.png' %}"/>
 	<img class="promo560" src="{% static 'img/560/promo_4_tr.jpg' %}"/>
 	<img class="promo320" src="{% static 'img/320/promo_4_tr.jpg' %}"/> 
-	
-    <div class="back_to_message"><a href="/message">Vaaza geri dön</a></div>
+-->
     
 	<div class="content">
         <h3>Ziyaret ettiğiniz için teşekkür ederiz! Yine bekleriz.</h3>
