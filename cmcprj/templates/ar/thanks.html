@@ -2,20 +2,12 @@
 {% load staticfiles %}
 {% block content %}
 
-
-<div class="bg_right_overlay"></div>
-<div class="bg_left_overlay"></div>
-<div class="bg_pattern_overlay"></div>
-
 <div class="wrapper">
 
-	
+	<div class="back_to_message_ar"><a href="/message">الرسالة إلى عودة</a></div>
+    
     {% if has_email and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_3_ar.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_3_ar.jpg' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_3_ar.jpg' %}"/>
-	
-    <div class="back_to_message_ar"><a href="/message">الرسالة إلى عودة</a></div>
+
     
 	<div class="content">	
 		<h3>تهانينا على قرارك بقبول المسيح.</h3>
@@ -23,23 +15,14 @@
 	</div>
 	
     {% elif has_email and accepted == 'no' %}
-	<img class="promo" src="{% static 'img/promo_4_ar.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_ar.jpg' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_ar.jpg' %}"/>
 	
-    <div class="back_to_message_ar"><a href="/message">الرسالة إلى عودة</a></div>
-    
 	<div class="content">
         <h3>شكرا لاهتمامك.</h3>
         <h3>سوف نتواصل معك قريبا جداً</h3>
 	</div>
         
     {% elif has_email == False and accepted == 'yes' %}
-	<img class="promo" src="{% static 'img/promo_4_ar.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_ar.jpg' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_ar.jpg' %}"/>
-		
-    <div class="back_to_message_ar"><a href="/message">الرسالة إلى عودة</a></div>
+	
     
 	<div class="content">
         <h3> تهاني على قرارك لقبول يسوع المسيح. نأمل أن نلتقي بك مرة أخرى.    
@@ -49,12 +32,6 @@
     
     {% else %}
 
-	<img class="promo" src="{% static 'img/promo_4_ar.png' %}"/>
-	<img class="promo560" src="{% static 'img/560/promo_4_ar.jpg' %}"/>
-	<img class="promo320" src="{% static 'img/320/promo_4_ar.jpg' %}"/>
-	
-    <div class="back_to_message_ar"><a href="/message">الرسالة إلى عودة</a></div>
-    
 	<div class="content">
         <h3>شكرا لزيارتك! نتمنى ان نراك مرة اخرى.</h3>
         <h3>يسوع يحبك، وهو فى انتظارك لتقبل الهدية.</h3>
