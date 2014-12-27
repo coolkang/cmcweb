@@ -217,6 +217,14 @@ h3
 
 }
 
+@media screen and (max-width: 540px) 
+{
+	#site-title
+	{
+		display:none;
+	}
+}
+
 #description {
 	display:none;
 }
