@@ -1,5 +1,5 @@
 ﻿{% extends "base/basic_arabic.html" %}
-
+{% load staticfiles %}
 {% block content %}
 <!--
 <div class="bg_right_overlay"></div>
@@ -11,7 +11,7 @@
 <div class="video">
 <iframe src="https://player.vimeo.com/video/97418513?autoplay=1" width="720" height="480" frameborder="0" allowfullscreen></iframe>
 </div>
-
+<img id="video-shadow" src="{% static 'img/shadow.png' %}"/>
 
 <div class="content">
 

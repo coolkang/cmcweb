@@ -33,6 +33,7 @@
 <body dir="rtl">
     
     <div class="top_bar">
+			<div>
         {% for code, label in lang_choices %}
             {% if code != curr_lang %}
             <span style="margin-left:5px;">
@@ -40,6 +41,7 @@
             </span>
             {% endif %}
         {% endfor %}
+			</div>
     </div>
     
     <div id="bg">
