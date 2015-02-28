@@ -31,17 +31,17 @@ Install python dev library
 
 
 
-Setup virtualenv and project Under /home/admin
+Setup virtualenv and project Under your project folder
 
 > mkdir PYENV 
 
 
-Under /home/admin/PYENV
+Under PYENV folder
 
 > virtualenv cmcweb_prj
 
 
-Under /home/admin/PYENV/cmcweb_prj
+Under cmcweb_prj project folder
 > git clone https://github.com/coolkang/cmcweb.git
 
 
@@ -76,9 +76,4 @@ WITH virtualenv activated
 
 > python manage.py collectstatic --settings=cmcprj.settings.production
 
-Copy httpd.conf AS hadiye.org.conf  into /etc/apache2/sites-available folder
-And run the below command
-
-> sudo a2ensite hadiye.org.conf
-> sudo service apache2 reload
-
+configure httpd.conf to connect your project virtualenv
