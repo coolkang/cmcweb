@@ -12,7 +12,7 @@ How to Install & run a local instance
 
 Install Virtualenv and PIP
 
->>> apt-get install python-pip python-virtualenv
+> apt-get install python-pip python-virtualenv
 
 
 Install GIT 
