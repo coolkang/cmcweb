@@ -10,14 +10,14 @@ How to Install & run a local instance
 ** This is based on a Ubuntu server and you will run this project with virtualenv and MySQL server.
 
 
-- Install Virtualenv and PIP
+Install Virtualenv and PIP
 
-apt-get install python-pip python-virtualenv
+>>> apt-get install python-pip python-virtualenv
 
 
-- Install GIT 
+Install GIT 
 
-sudo apt-get install git
+>>> sudo apt-get install git
 
 
 - Install MySQL
