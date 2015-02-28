@@ -50,39 +50,35 @@ Activate virtualenv
 
 Install necessary packages for the project
 
-pip install -r requirements.txt
+> pip install -r requirements.txt
 
 
 ** You need below part to run this project with an Apache web server.
 
-# Install Apache
+Install Apache
 
-sudo apt-get install apache2
-sudo apt-get install libapache2-mod-wsgi
+> sudo apt-get install apache2
+> sudo apt-get install libapache2-mod-wsgi
 
-# Create a log file folder & change a permission of the folder
+Create a log file folder & change a permission of the folder
 
-mkdir /home/admin/PYENV/cmcweb_prj/cmcweb/cmcprj/LOGS/
-
-chmod -R 777 ~/PYENV/cmcweb_prj/cmcweb/cmcprj/LOGS
-
-
-# Create a static files folder
-
-sudo mkdir /var/www/hadiye.org
+> mkdir /home/admin/PYENV/cmcweb_prj/cmcweb/cmcprj/LOGS/
+> chmod -R 777 ~/PYENV/cmcweb_prj/cmcweb/cmcprj/LOGS
 
 
-# Run collectstatic command to copy static files to the above static file folder.
-# WITH virtualenv activated
+Create a static files folder
 
-python manage.py collectstatic --settings=cmcprj.settings.production
-
+> sudo mkdir /var/www/hadiye.org
 
 
-# Copy httpd.conf AS hadiye.org.conf  into /etc/apache2/sites-available folder
-# And run the below command
+Run collectstatic command to copy static files to the above static file folder.
+WITH virtualenv activated
 
-sudo a2ensite hadiye.org.conf
+> python manage.py collectstatic --settings=cmcprj.settings.production
 
-sudo service apache2 reload
+Copy httpd.conf AS hadiye.org.conf  into /etc/apache2/sites-available folder
+And run the below command
+
+> sudo a2ensite hadiye.org.conf
+> sudo service apache2 reload
 
