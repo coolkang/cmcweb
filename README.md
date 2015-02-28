@@ -5,8 +5,8 @@ CMC web application based on Django.
 The current Django version used for this project is 1.6.4.
 
 
-How to Install & run a local instance 
-=====================================
+# How to Install & run a local instance 
+
 ** This is based on a Ubuntu server and you will run this project with virtualenv and MySQL server.
 
 
