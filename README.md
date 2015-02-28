@@ -17,46 +17,38 @@ Install Virtualenv and PIP
 
 Install GIT 
 
->>> sudo apt-get install git
+> sudo apt-get install git
 
 
-- Install MySQL
+Install MySQL
 
-sudo apt-get install mysql-server
+> sudo apt-get install mysql-server
+> sudo apt-get install libmysqlclient-dev
 
-sudo apt-get install libmysqlclient-dev
+Install python dev library
 
-
-# Install python dev library
-
-sudo apt-get install python-dev
+> sudo apt-get install python-dev
 
 
 
-# Setup virtualenv and project
-# ----------------------------
+Setup virtualenv and project Under /home/admin
 
-# Under /home/admin
-
-mkdir PYENV 
+> mkdir PYENV 
 
 
-# Under /home/admin/PYENV
+Under /home/admin/PYENV
 
-virtualenv cmcweb_prj
-
-
-# Under /home/admin/PYENV/cmcweb_prj
-
-git clone https://github.com/coolkang/cmcweb.git
+> virtualenv cmcweb_prj
 
 
-# Activate virtualenv
+Under /home/admin/PYENV/cmcweb_prj
+> git clone https://github.com/coolkang/cmcweb.git
 
-source bin/activate
 
+Activate virtualenv
+> source bin/activate
 
-# Install necessary packages for the project
+Install necessary packages for the project
 
 pip install -r requirements.txt
 
