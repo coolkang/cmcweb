@@ -81,7 +81,7 @@ if __name__ == "__main__":
         print(loc_info.city_name)
 
         try:
-            db_session.execute("update webpages_accesslocation set city = '{0}' where id = {1}".format(loc_info.city_name, useraccess_id))
+            db_session.execute("update webpages_accesslocation set city = '{0}', lat = {1}, lon = {2} where id = {3}".format(loc_info.city_name, loc_info.latitude, loc_info.longitude, useraccess_id))
             count += 1
         except:
             pass
